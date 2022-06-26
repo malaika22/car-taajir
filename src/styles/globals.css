@@ -21,8 +21,16 @@ a {
 }
 
 :root {
-  --color-primary: #f4997c;
+  --color-primary: #ef6212;
   --color-secondary: #fcefdd;
   --color-foreground-primary: #ffeedb;
   --color-foreground-secondary: #f8f8f8;
+}
+
+.landing-page-bg {
+  background-image: url("/images/landingPage/backgroundDesign.png");
+}
+
+.navItems:hover ~ .borderAnimation {
+  width: 100%;
 }
