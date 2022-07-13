@@ -9,7 +9,7 @@ const Header = () => {
     { title: "Blog", href: "/blogs" },
   ];
   return (
-    <nav className='flex fixed top-0 h-[95px] bg-[#0000009C] px-24 py-6 items-center justify-between w-full'>
+    <nav className='flex fixed top-0 h-[95px] bg-[#0000009C] px-24 py-6 items-center justify-between w-full z-20'>
       <div className='flex-1 flex gap-x-8'>
         {links.map((link, index) => (
           <NavItems href={link.href} text={link.title} />

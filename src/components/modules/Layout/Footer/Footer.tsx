@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Anchor from "../../Anchor/Anchor";
 import Logo from "../../Logo";
@@ -95,6 +96,20 @@ const Footer = () => {
             ))}
           </div>
         ))}
+        <div>
+          <div className='text-white font-bold mb-4'>Follow Us On</div>
+          <div className='grid grid-cols-3 gap-x-3'>
+            <div className='relative w-7 h-7'>
+              <Image src='/images/icons/insta.png' layout='fill' />
+            </div>
+            <div className='relative w-7 h-7'>
+              <Image src='/images/icons/phone.png' layout='fill' />
+            </div>
+            <div className='relative w-7 h-7'>
+              <Image src='/images/icons/fb.png' layout='fill' />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

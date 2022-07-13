@@ -1,24 +1,24 @@
 import {
-  CarModelFilter,
-  CarCategory,
   CarBackground,
+  CarCategory,
+  CarModelFilter,
 } from "@/components/modules";
 import { ShopByLocation } from "@/components/modules/CarsHomeLayout";
-import { ShopByStyle } from "@/components/views";
+import { FeaturedCars } from "@/components/views";
 
-const NewCars = () => {
+const UsedCars = () => {
   return (
     <>
       <CarBackground
         title='Shop the nation’s largest'
-        subtitle='New car inventory'
+        subtitle='Used car inventory'
       />
       <CarModelFilter />
       <CarCategory />
-      <ShopByStyle />
+      <FeaturedCars />
       <ShopByLocation />
     </>
   );
 };
 
-export default NewCars;
+export default UsedCars;
