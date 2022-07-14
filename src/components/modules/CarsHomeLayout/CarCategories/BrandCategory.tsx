@@ -27,7 +27,7 @@ const BrandCard = ({ category }: ICarBrand) => {
     <div className='bg-white border-2 border-[#B5B5B5] rounded-2xl py-5 flex items-center'>
       <div className='w-24 h-24 relative mx-auto flex items-center'>
         {category.src ? (
-          <Image src={category.src} layout='fill' />
+          <Image src={category.src} layout='fill' objectFit='contain' />
         ) : (
           <span className='text-[#444343] font-bold text-sm cursor-pointer'>
             See all Brands

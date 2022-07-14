@@ -7,20 +7,33 @@ const ShopByStyle = () => {
         Shop by lifestyle
       </h2>
       <div className='grid-cols-4 grid gap-x-4 max-w-7xl mx-auto py-14'>
-        <div className='w-[200px] h-[180px] relative flex items-center mx-auto'>
-          <Image src='/images/findCars/newCars/commuter.png' layout='fill' />
+        <div className='w-full h-[180px] relative flex items-center mx-auto'>
+          <Image
+            src='/images/findCars/newCars/commuter.png'
+            layout='fill'
+            objectFit='contain'
+          />
         </div>
-        <div className='w-[200px] h-[180px] relative flex items-center mx-auto'>
+        <div className='w-full h-[180px] relative flex items-center mx-auto'>
           <Image
             src='/images/findCars/newCars/eco-friendly.png'
             layout='fill'
+            objectFit='contain'
           />
         </div>
-        <div className='w-[200px] h-[180px] relative flex items-center mx-auto'>
-          <Image src='/images/findCars/newCars/family.png' layout='fill' />
+        <div className='w-full h-[180px] relative flex items-center mx-auto'>
+          <Image
+            src='/images/findCars/newCars/family.png'
+            layout='fill'
+            objectFit='contain'
+          />
         </div>
-        <div className='w-[200px] h-[180px] relative flex items-center mx-auto'>
-          <Image src='/images/findCars/newCars/outdoor.png' layout='fill' />
+        <div className='w-full h-[180px] relative flex items-center mx-auto'>
+          <Image
+            src='/images/findCars/newCars/outdoor.png'
+            layout='fill'
+            objectFit='contain'
+          />
         </div>
       </div>
     </div>

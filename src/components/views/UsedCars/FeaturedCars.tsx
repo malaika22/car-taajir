@@ -6,7 +6,7 @@ const FeaturedCars = () => {
       <h2 className='text-white text-2xl font-bold text-center mb-12'>
         Featured Used Cars For Sale
       </h2>
-      <div className='flex max-w-5xl mx-auto gap-x-5'>
+      <div className='grid grid-cols-2 max-w-5xl mx-auto gap-x-5'>
         <div className='grid grid-cols-2 flex-1'>
           <div className='w-full h-[150px] relative'>
             <Image
@@ -33,7 +33,71 @@ const FeaturedCars = () => {
             />
           </div>
         </div>
-        <div className='flex-1'>haha</div>
+        <div className='h-[300px] bg-black rounded-3xl px-9 py-7'>
+          <div className='flex text-white justify-between items-start'>
+            <div className='font-bold text-lg'>
+              Honda BR-V 2017
+              <div className='text-sm'>Karachi</div>
+            </div>
+            <div className='text-lg'>PKR 2,875,000</div>
+          </div>
+          <div className='grid grid-cols-4 gap-y-6 gap-x-4 text-white py-8'>
+            <div className='flex flex-col justify-end text-center'>
+              <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
+                <Image
+                  src={"/images/findCars/featured-cars/speedometer.png"}
+                  layout='fill'
+                />
+              </div>
+              <div className='text-[12px]'>92,000 km</div>
+            </div>
+            <div className='text-center'>
+              <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
+                <Image
+                  src={"/images/findCars/featured-cars/gas-station.png"}
+                  layout='fill'
+                />
+              </div>
+              <div className='text-[12px]'>Petrol</div>
+            </div>
+            <div className='text-center'>
+              <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
+                <Image
+                  src={"/images/findCars/featured-cars/gear-box.png"}
+                  layout='fill'
+                />
+              </div>
+              <div className='text-[12px]'>Automatic</div>
+            </div>
+            <div className='text-center'>
+              <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
+                <Image
+                  src={"/images/findCars/featured-cars/planner.png"}
+                  layout='fill'
+                />
+              </div>
+              <div className='text-[12px]'>2017</div>
+            </div>
+            <div className='text-center'>
+              <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
+                <Image
+                  src={"/images/findCars/featured-cars/air-bag.png"}
+                  layout='fill'
+                />
+              </div>
+              <div className='text-[12px]'>Air bag</div>
+            </div>
+            <div className='text-center'>
+              <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
+                <Image
+                  src={"/images/findCars/featured-cars/steerig-wheel.png"}
+                  layout='fill'
+                />
+              </div>
+              <div className='text-[12px]'>Power Steering</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -5,3 +5,5 @@ export { default as CarModelFilter } from "./CarFilters/CarModelFilter";
 export { default as CarCategory } from "./CarsHomeLayout/CarCategories/CarCategories";
 export { default as CarBackground } from "./CarsHomeLayout/CarBackground";
 export { default as shopByLocation } from "./CarsHomeLayout/ShopByLocation";
+export { default as AuthContainer } from "./Container/index";
+export { default as TextField } from "./FormUtils/TextField";

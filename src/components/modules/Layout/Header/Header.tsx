@@ -1,7 +1,10 @@
 import { Anchor, Logo } from "@/components/modules";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 const Header = () => {
+  const { pathname } = useRouter();
+  console.log(pathname);
   const links = [
     { title: "Find New Cars", href: "/new-cars" },
     { title: "Find Used Cars", href: "/used-cars" },
@@ -9,7 +12,11 @@ const Header = () => {
     { title: "Blog", href: "/blogs" },
   ];
   return (
-    <nav className='flex fixed top-0 h-[95px] bg-[#0000009C] px-24 py-6 items-center justify-between w-full z-20'>
+    <nav
+      className={`flex fixed top-0 h-[95px] bg-[#0000009C] px-24 py-6 items-center justify-between w-full z-20 ${
+        pathname === "/sign-up" && "sticky top-0 bg-[#000000]"
+      } `}
+    >
       <div className='flex-1 flex gap-x-8'>
         {links.map((link, index) => (
           <NavItems href={link.href} text={link.title} />
