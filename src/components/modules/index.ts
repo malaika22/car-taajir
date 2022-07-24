@@ -7,3 +7,5 @@ export { default as CarBackground } from "./CarsHomeLayout/CarBackground";
 export { default as shopByLocation } from "./CarsHomeLayout/ShopByLocation";
 export { default as AuthContainer } from "./Container/index";
 export { default as TextField } from "./FormUtils/TextField";
+export { default as PhoneNumberInput } from "./FormUtils/PhoneNumberInput";
+export { default as ForgetPasswordModal } from "./Modals/index";

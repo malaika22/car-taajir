@@ -11,10 +11,11 @@ const Header = () => {
     { title: "Sell Your Car", href: "/sell-your-car" },
     { title: "Blog", href: "/blogs" },
   ];
+  const optionalPaths = pathname === "/sign-up" || "/login";
   return (
     <nav
-      className={`flex fixed top-0 h-[95px] bg-[#0000009C] px-24 py-6 items-center justify-between w-full z-20 ${
-        pathname === "/sign-up" && "sticky top-0 bg-[#000000]"
+      className={`flex fixed top-0 h-[95px] bg-[#0000009C] px-24 py-6 items-center justify-between w-full z-10 ${
+        pathname === optionalPaths && "sticky top-0 bg-[#000000]"
       } `}
     >
       <div className='flex-1 flex gap-x-8'>

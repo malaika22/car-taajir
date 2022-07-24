@@ -8,16 +8,18 @@ interface IAuthContainer {
 
 const AuthContainer = ({ children, pageTitle }: IAuthContainer) => {
   return (
-    <div className='bg-[#E5E5E5] py-9 px-6'>
-      <div className='max-w-5xl mx-auto grid grid-cols-3'>
-        <div className='col-span-1 bg-white'>
+    <div className='bg-[#E5E5E5] py-12 px-6 '>
+      <div className='max-w-6xl mx-auto flex gap-x-20 items-center'>
+        <div className='sm:w-[40%] px-10 py-6 min-h-[635px] bg-white drop-shadow-[0_2.29px_2.29px_rgba(0,0,0,0.25)] rounded-xl'>
           <div>
-            <h2 className='text-[#444343]'>{pageTitle}</h2>
+            <h2 className='text-[#444343] text-xl font-bold mb-7'>
+              {pageTitle}
+            </h2>
             <div>{children}</div>
           </div>
         </div>
-        <div className='col-span-2'>
-          <div className='w-full h-[200px] relative'>
+        <div className='w-[60%]'>
+          <div className=' h-[500px] w-full relative'>
             <Image
               src='/images/authentication/authentication-banner.png'
               layout='fill'

@@ -4,3 +4,12 @@ export interface ISignup {
   newPassword: string;
   confirmPassword: string;
 }
+
+export interface IPhone {
+  phoneNumber: string;
+}
+
+export interface ILogin {
+  email: string;
+  password: string;
+}
