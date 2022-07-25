@@ -5,6 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import TextField from "../FormUtils/TextField";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { STATUS } from "@/types/general.types";
 
 interface IForgetPassword {
   email: string;
@@ -27,22 +28,22 @@ const ForgetPasswordModal = ({
   } = useForm<IForgetPassword>({
     resolver: yupResolver(forgetPasswordSchema),
   });
-  const [successStatus, setSuccessStatus] = useState("idle");
+  const [successStatus, setSuccessStatus] = useState({ status: STATUS.idle });
   console.log("modal visible", visible, errors);
 
   const handleForgetPassword = (values: IForgetPassword) => {
     console.log("values", values);
     try {
-      setSuccessStatus("loading");
+      setSuccessStatus({ status: STATUS.loading });
       //Call API
       setTimeout(() => {
-        setSuccessStatus("success");
+        setSuccessStatus({ status: STATUS.success });
       }, 5000);
     } catch (err) {
-      setSuccessStatus("error");
+      setSuccessStatus({ status: STATUS.error });
     }
   };
-  if (successStatus === "success") {
+  if (successStatus.status === STATUS.success) {
     return (
       <Transition appear show={true} as={Fragment}>
         <Dialog
@@ -108,7 +109,7 @@ const ForgetPasswordModal = ({
         </Dialog>
       </Transition>
     );
-  } else if (successStatus === "loading") {
+  } else if (successStatus.status === STATUS.loading) {
     return (
       <div>
         <Transition appear show={true} as={Fragment}>
@@ -150,7 +151,7 @@ const ForgetPasswordModal = ({
         </Transition>
       </div>
     );
-  } else if (successStatus === "error") {
+  } else if (successStatus.status === STATUS.error) {
     return <div>Error</div>;
   } else {
     return (
@@ -188,21 +189,16 @@ const ForgetPasswordModal = ({
                     // as='h3'
                     className='text-lg font-medium leading-6 text-gray-900'
                   >
-                    <div
-                      className='inline-block cursor-pointer'
-                      onClick={() => onClose(false)}
-                    >
+                    <div className='inline-block cursor-pointer'>
                       <IoIosArrowBack className='text-2xl' />
                     </div>
                   </Dialog.Title>
                   <form onSubmit={handleSubmit(handleForgetPassword)}>
                     <div className='mt-10'>
                       <h2 className='text-2xl text-[#444343] font-bold mb-3'>
-                        Forgot Password?
+                        ERROR
                       </h2>
-                      <p className='text-sm text-gray-500 mb-6'>
-                        Type your email below to reset your password.
-                      </p>
+                      <p className='text-sm text-gray-500 mb-6'>GOT ERROR</p>
                       <TextField
                         id='email'
                         placeholder='Enter email'
