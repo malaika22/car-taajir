@@ -1,5 +1,5 @@
-import { Children } from "@/types/general.types";
-import Link from "next/link";
+import { Children } from '@/types/general.types';
+import Link from 'next/link';
 
 interface IAnchor {
   children: Children;

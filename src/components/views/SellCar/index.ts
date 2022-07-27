@@ -1,1 +1,1 @@
-export { default } from "./WizardPostAd/WizardPostAd";
+export { default } from './WizardPostAd/WizardPostAd';

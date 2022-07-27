@@ -1,26 +1,23 @@
-import { PagesWizard } from "@/schemas/wizard.schema";
-import { STATUS } from "@/types/general.types";
-import { FC, useState } from "react";
-import BodyWizard from "./BodyWizard";
-import HeaderWizard from "./HeaderWizard";
-
-const BasicInformation = () => {
-  return <div>Basic Info</div>;
-};
-
-const UploadInformation = () => {
-  return <div>Upload Information</div>;
-};
-
-const AdditionalInformation = () => {
-  return <div>Additional Information</div>;
-};
-
-const VerifyNumber = () => {
-  return <div>Verify Number</div>;
-};
+import {
+  PagesWizard,
+  wizardSchema,
+  WizardSchema,
+} from '@/schemas/wizard.schema';
+import { STATUS } from '@/types/general.types';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { FC, useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
+import BodyWizard from './BodyWizard';
+import HeaderWizard from './HeaderWizard';
+import AdditionalInformation from './PagesWizard/AdditionalInformation';
+import BasicInformation from './PagesWizard/BasicInformation';
+import UploadPictures from './PagesWizard/UploadPictures';
+import VerifyNumber from './PagesWizard/VerifyNumber';
 
 const WizardPostAd = () => {
+  const methods = useForm<WizardSchema>({
+    resolver: yupResolver(wizardSchema),
+  });
   const [formState, setFormState] = useState<{
     status: STATUS;
   }>({
@@ -37,45 +34,49 @@ const WizardPostAd = () => {
     subtitle?: string;
   }[] = [
     {
-      label: "Basic Information",
-      id: "basicInformation",
+      label: 'Basic Information',
+      id: 'basicInformation',
       Component: BasicInformation,
     },
     {
-      label: "Upload Pictures",
-      id: "uploadPicture",
-      Component: UploadInformation,
+      label: 'Upload Pictures',
+      id: 'uploadPicture',
+      Component: UploadPictures,
     },
     {
-      label: "Additional Information",
-      id: "additionalInformation",
+      label: 'Additional Information',
+      id: 'additionalInformation',
       Component: AdditionalInformation,
     },
     {
-      label: "Verify Your Number",
-      id: "verifyNumber",
+      label: 'Verify Your Number',
+      id: 'verifyNumber',
       Component: VerifyNumber,
     },
   ];
 
   const handleIncrement = () => {
-    window.scrollTo({ left: 0, top: 80, behavior: "smooth" });
+    window.scrollTo({ left: 0, top: 80, behavior: 'smooth' });
     setActiveIndex(activeIndex + 1);
   };
   const handleDrecement = () => {
-    window.scrollTo({ left: 0, top: 80, behavior: "smooth" });
+    window.scrollTo({ left: 0, top: 80, behavior: 'smooth' });
     setActiveIndex(activeIndex ? activeIndex - 1 : 0);
   };
   return (
-    <div>
-      <HeaderWizard activeIndex={activeIndex} />
-      <BodyWizard
-        pages={pages}
-        activeIndex={activeIndex}
-        increment={handleIncrement}
-        decrement={handleDrecement}
-      />
-    </div>
+    <FormProvider {...methods}>
+      <form onSubmit={(e) => e.preventDefault()}>
+        <div className='max-w-6xl mx-auto py-10'>
+          <HeaderWizard activeIndex={activeIndex} />
+          <BodyWizard
+            pages={pages}
+            activeIndex={activeIndex}
+            increment={handleIncrement}
+            decrement={handleDrecement}
+          />
+        </div>
+      </form>
+    </FormProvider>
   );
 };
 

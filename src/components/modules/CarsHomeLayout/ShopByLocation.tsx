@@ -1,5 +1,5 @@
-import { shopByLocation } from "@/utils/constant";
-import Image from "next/image";
+import { shopByLocation } from '@/utils/constant';
+import Image from 'next/image';
 
 const ShopByLocation = () => {
   return (

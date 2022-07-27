@@ -3,8 +3,8 @@ import {
   UseFormRegister,
   Controller,
   useForm,
-} from "react-hook-form";
-import Input from "react-phone-number-input/input";
+} from 'react-hook-form';
+import Input from 'react-phone-number-input/input';
 
 interface IPhoneNumberProps {
   placeholder: string;

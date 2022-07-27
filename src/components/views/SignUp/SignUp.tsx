@@ -1,19 +1,21 @@
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { IPhone, ISignup } from "@/types/credentials.types";
-import { Anchor, PhoneNumberInput, TextField } from "@/components/modules";
-import Image from "next/image";
-import { useState } from "react";
-import "yup-phone";
+import { yupResolver } from '@hookform/resolvers/yup';
+import Image from 'next/image';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import 'yup-phone';
+
+import { Anchor, PhoneNumberInput, TextField } from '@/components/modules';
+
+import { IPhone, ISignup } from '@/types/credentials.types';
 
 const SignUp = () => {
-  const [signUpType, setSignUpType] = useState<string>("default");
+  const [signUpType, setSignUpType] = useState<string>('default');
   const renderSignupView = () => {
     switch (signUpType) {
-      case "default":
+      case 'default':
         return <DefaultSignup />;
-      case "phoneNumber":
+      case 'phoneNumber':
         return <PhoneNumberView />;
     }
   };
@@ -26,14 +28,14 @@ const SignUp = () => {
         <div className='flex items-center mb-2'>
           <div className='w-[24px] h-[24px] relative mr-[20px] '>
             <Image
-              src={"/images/authentication/google-icon.png"}
+              src='/images/authentication/google-icon.png'
               layout='fill'
               objectFit='contain'
             />
           </div>
           <div
             className='text-[#0C45B2] text-sm'
-            onClick={() => setSignUpType("google")}
+            onClick={() => setSignUpType('google')}
           >
             Sign Up with Google
           </div>
@@ -41,14 +43,14 @@ const SignUp = () => {
         <div className='flex items-center mb-2'>
           <div className='w-[24px] h-[24px] relative  mr-[20px]'>
             <Image
-              src={"/images/authentication/phone-icon.png"}
+              src='/images/authentication/phone-icon.png'
               layout='fill'
               objectFit='contain'
             />
           </div>
           <div
             className='text-[#0C45B2] text-sm'
-            onClick={() => setSignUpType("phoneNumber")}
+            onClick={() => setSignUpType('phoneNumber')}
           >
             Sign Up with Number
           </div>
@@ -65,10 +67,10 @@ const PhoneNumberView = () => {
   const phoneSchema = yup.object({
     phoneNumber: yup
       .string()
-      .phone("PK", true, "Phone number is invalid")
-      .required("Phone number is required"),
+      .phone('PK', true, 'Phone number is invalid')
+      .required('Phone number is required'),
   });
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [processing, setProcessing] = useState(false);
   const {
     handleSubmit,
@@ -78,12 +80,12 @@ const PhoneNumberView = () => {
     resolver: yupResolver(phoneSchema),
   });
   const phoneRegister = (values: IPhone) => {
-    console.log("values", values);
+    console.log('values', values);
     setCodeStep(true);
     try {
       //call signup API
     } catch (err) {
-      setError("API Error");
+      setError('API Error');
     } finally {
       setProcessing(false);
     }
@@ -92,7 +94,7 @@ const PhoneNumberView = () => {
     <>
       <div className='my-7 mb-10 text-sm text-[#0C45B2]'>
         Please enter a valid number where an SMS can be sent to verify your
-        number. This number will be used to log you into{" "}
+        number. This number will be used to log you into{' '}
         <Anchor href='/' className='text-black cursor-pointer font-bold'>
           Car Taajir
         </Anchor>
@@ -127,14 +129,14 @@ const PhoneNumberView = () => {
             </label>
 
             <div className='text-[#444343] text-sm ml-3'>
-              Didn’t receive your code?{" "}
+              Didn’t receive your code?{' '}
               <span className='text-[#0C45B2] font-bold'>Retry</span>
             </div>
           </div>
         </div>
       )}
       <div className='mb-10 text-sm mt-3 text-[#444343]'>
-        Already a member?{" "}
+        Already a member?{' '}
         <Anchor href='#' className='text-[#0C45B2]'>
           Sign In
         </Anchor>
@@ -148,18 +150,18 @@ const DefaultSignup = () => {
     .object({
       fullName: yup
         .string()
-        .min(5, "Too short")
-        .required("Full name is required!"),
-      email: yup.string().email("Invalid Email").required("Email is required!"),
+        .min(5, 'Too short')
+        .required('Full name is required!'),
+      email: yup.string().email('Invalid Email').required('Email is required!'),
       newPassword: yup
         .string()
-        .min(3, "Password must be at least 8 characters")
-        .required("Password is required!"),
+        .min(3, 'Password must be at least 8 characters')
+        .required('Password is required!'),
       confirmPassword: yup
         .string()
-        .min(3, "Password must be at least 8 characters")
-        .oneOf([yup.ref("newPassword"), null], "Password must match")
-        .required("Required!"),
+        .min(3, 'Password must be at least 8 characters')
+        .oneOf([yup.ref('newPassword'), null], 'Password must match')
+        .required('Required!'),
     })
     .required();
 
@@ -172,14 +174,14 @@ const DefaultSignup = () => {
   });
 
   const [processing, setProcessing] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState<string>('');
 
   const handleSignup = (values: ISignup) => {
-    console.log("values", values);
+    console.log('values', values);
     try {
       //call signup API
     } catch (err) {
-      setError("API Error");
+      setError('API Error');
     } finally {
       setProcessing(false);
     }
@@ -230,7 +232,7 @@ const DefaultSignup = () => {
         Sign up
       </button>
       <div className='text-sm mt-3 text-[#444343]'>
-        Already a member?{" "}
+        Already a member?{' '}
         <Anchor href='#' className='text-[#0C45B2]'>
           Sign In
         </Anchor>

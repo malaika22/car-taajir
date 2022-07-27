@@ -1,1 +1,1 @@
-export { default } from "./FeaturedCars";
+export { default } from './FeaturedCars';

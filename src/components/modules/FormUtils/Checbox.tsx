@@ -1,7 +1,7 @@
 const Checkbox = () => {
   return (
     <div>
-      <input type={"checkbox"} />
+      <input type={'checkbox'} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import { Children } from "@/types/general.types";
-import Image from "next/image";
+import { Children } from '@/types/general.types';
+import Image from 'next/image';
 
 interface IAuthContainer {
   children: Children;

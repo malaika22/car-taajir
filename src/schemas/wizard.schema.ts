@@ -1,5 +1,5 @@
-import { wizardConstants } from "@/utils/constant";
-import * as yup from "yup";
+import { wizardConstants } from '@/utils/constant';
+import * as yup from 'yup';
 
 export function checkIfFilesAreTooBig(files?: [File]): boolean {
   let valid = true;
@@ -18,7 +18,7 @@ export function checkIfFilesAreCorrectType(files?: [File]): boolean {
   let valid = true;
   if (files) {
     files.map((file) => {
-      if (!["application/pdf", "image/jpeg", "image/png"].includes(file.type)) {
+      if (!['application/pdf', 'image/jpeg', 'image/png'].includes(file.type)) {
         valid = false;
       }
     });
@@ -26,39 +26,39 @@ export function checkIfFilesAreCorrectType(files?: [File]): boolean {
   return valid;
 }
 
-const wizardSchema = yup.object({
+export const wizardSchema = yup.object({
   basicInformation: yup.object({
-    city: yup.string().oneOf(wizardConstants.cities).required("Required"),
+    city: yup.string().oneOf(wizardConstants.cities).required('Required'),
     carInfo: yup.object({
       modelYear: yup
         .string()
         .oneOf(wizardConstants.modelYear)
-        .required("Required"),
-      make: yup.string().oneOf(wizardConstants.make).required("Required!"),
-      model: yup.string().oneOf(wizardConstants.model).required("Required!"),
+        .required('Required'),
+      make: yup.string().oneOf(wizardConstants.make).required('Required!'),
+      model: yup.string().oneOf(wizardConstants.model).required('Required!'),
       version: yup
         .string()
         .oneOf(wizardConstants.versions)
-        .required("Required!"),
+        .required('Required!'),
     }),
     registeredIn: yup.string().oneOf(wizardConstants.resgisteredCities),
     exteriorColor: yup
       .string()
       .oneOf(wizardConstants.exteriorColors)
-      .required("Required!!"),
-    milage: yup.number().required("Required!!"),
-    price: yup.number().required("Required!!"),
+      .required('Required!!'),
+    milage: yup.number().required('Required!!'),
+    price: yup.number().required('Required!!'),
     description: yup
       .string()
-      .min(10, "Description is too short")
-      .required("Required!!"),
+      .min(10, 'Description is too short')
+      .required('Required!!'),
   }),
   uploadPictures: yup.object({
     files: yup
       .array()
       .nullable()
-      .required("Required!!")
-      .test("is-correct-file", "VALIDATION_FIELD_FILE_BIG", (values) => {
+      .required('Required!!')
+      .test('is-correct-file', 'VALIDATION_FIELD_FILE_BIG', (values) => {
         let valid = true;
         if (values) {
           values.map((file) => {
@@ -75,29 +75,31 @@ const wizardSchema = yup.object({
     engineType: yup
       .string()
       .oneOf(wizardConstants.engineType)
-      .required("Required!!"),
+      .required('Required!!'),
     engineCapacity: yup
       .string()
-      .min(4, "Enter valid engine capacity")
-      .required("Required!!"),
+      .min(4, 'Enter valid engine capacity')
+      .required('Required!!'),
     transmission: yup
       .string()
       .oneOf(wizardConstants.transmission)
-      .required("Required!!"),
+      .required('Required!!'),
     assembly: yup
       .string()
       .oneOf(wizardConstants.assembly)
-      .required("Required!!"),
+      .required('Required!!'),
     features: yup
       .array()
       .min(1)
       .of(yup.string().required())
-      .required("Required!!"),
+      .required('Required!!'),
   }),
 });
 
+export type WizardSchema = yup.InferType<typeof wizardSchema>;
+
 export type PagesWizard =
-  | "basicInformation"
-  | "uploadPicture"
-  | "additionalInformation"
-  | "verifyNumber";
+  | 'basicInformation'
+  | 'uploadPicture'
+  | 'additionalInformation'
+  | 'verifyNumber';

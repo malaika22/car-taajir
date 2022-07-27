@@ -1,5 +1,5 @@
-import { AuthContainer, ForgetPasswordModal } from "@/components/modules";
-import { Login } from "@/components/views";
+import { AuthContainer, ForgetPasswordModal } from '@/components/modules';
+import { Login } from '@/components/views';
 
 const LoginPage = () => {
   return (

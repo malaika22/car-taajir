@@ -1,1 +1,1 @@
-export { default } from "../NewCars/ShopByStyle";
+export { default } from '../NewCars/ShopByStyle';

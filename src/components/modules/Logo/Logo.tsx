@@ -1,6 +1,6 @@
-import { ASSETS } from "@/utils/constant";
-import Image from "next/image";
-import Link from "next/link";
+import { ASSETS } from '@/utils/constant';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Logo = () => {
   return (

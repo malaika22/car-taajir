@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import Anchor from "../../Anchor/Anchor";
-import Logo from "../../Logo";
+import Image from 'next/image';
+import Link from 'next/link';
+import Anchor from '../../Anchor/Anchor';
+import Logo from '../../Logo';
 
 interface IFooter {
   category: string;
@@ -14,58 +14,58 @@ interface IFooter {
 const Footer = () => {
   const footerLinks = [
     {
-      category: "Shop",
+      category: 'Shop',
       links: [
         {
-          title: "Browser by Category",
-          link: "#",
+          title: 'Browser by Category',
+          link: '#',
         },
         {
-          title: "View All Inventory",
-          link: "#",
+          title: 'View All Inventory',
+          link: '#',
         },
         {
-          title: "Find New Car",
-          link: "#",
+          title: 'Find New Car',
+          link: '#',
         },
         {
-          title: "Find Used Car",
-          link: "#",
+          title: 'Find Used Car',
+          link: '#',
         },
       ],
     },
     {
-      category: "Sell/Trade",
+      category: 'Sell/Trade',
       links: [
         {
-          title: "Post an Ad",
-          link: "#",
+          title: 'Post an Ad',
+          link: '#',
         },
       ],
     },
     {
-      category: "About",
+      category: 'About',
       links: [
         {
-          title: "About Car Taajir",
-          link: "#",
+          title: 'About Car Taajir',
+          link: '#',
         },
         {
-          title: "Contact Us",
-          link: "#",
+          title: 'Contact Us',
+          link: '#',
         },
       ],
     },
     {
-      category: "More ",
+      category: 'More ',
       links: [
         {
-          title: "Service",
-          link: "#",
+          title: 'Service',
+          link: '#',
         },
         {
-          title: "FAQs & Support",
-          link: "#",
+          title: 'FAQs & Support',
+          link: '#',
         },
       ],
     },

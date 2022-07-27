@@ -1,5 +1,5 @@
-import { PagesWizard } from "@/schemas/wizard.schema";
-import { FC } from "react";
+import { PagesWizard } from '@/schemas/wizard.schema';
+import { FC } from 'react';
 
 interface IBodyWizard {
   increment: () => void;
@@ -26,12 +26,17 @@ const BodyWizard = ({
     if (activeIndex < pages.length - 1) increment();
   };
   return (
-    <div>
-      {activeIndex && (
+    <div className='bg-white max-w-4xl mx-auto rounded-lg shadow-[0px_4px_4px_0_rgb(0,0,0,0.25)] my-4'>
+      {activeIndex ? (
         <div onClick={() => activeIndex !== 0 && decrement()}>Back</div>
+      ) : (
+        <></>
       )}
-      <Component />
-      <div onClick={handleNextPage}>Continue</div>
+      <div className='p-10'>
+        <Component />
+      </div>
+
+      {/* <div onClick={handleNextPage}>Continue</div> */}
     </div>
   );
 };

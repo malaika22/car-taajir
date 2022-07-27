@@ -1,11 +1,11 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Dispatch, SetStateAction, Fragment, useState } from "react";
-import * as yup from "yup";
-import { IoIosArrowBack } from "react-icons/io";
-import TextField from "../FormUtils/TextField";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { STATUS } from "@/types/general.types";
+import { Dialog, Transition } from '@headlessui/react';
+import { Dispatch, SetStateAction, Fragment, useState } from 'react';
+import * as yup from 'yup';
+import { IoIosArrowBack } from 'react-icons/io';
+import TextField from '../FormUtils/TextField';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { STATUS } from '@/types/general.types';
 
 interface IForgetPassword {
   email: string;
@@ -19,7 +19,7 @@ const ForgetPasswordModal = ({
   onClose: Dispatch<SetStateAction<boolean>>;
 }) => {
   const forgetPasswordSchema = yup.object({
-    email: yup.string().email().required("Email is required!"),
+    email: yup.string().email().required('Email is required!'),
   });
   const {
     register,
@@ -29,10 +29,10 @@ const ForgetPasswordModal = ({
     resolver: yupResolver(forgetPasswordSchema),
   });
   const [successStatus, setSuccessStatus] = useState({ status: STATUS.idle });
-  console.log("modal visible", visible, errors);
+  console.log('modal visible', visible, errors);
 
   const handleForgetPassword = (values: IForgetPassword) => {
-    console.log("values", values);
+    console.log('values', values);
     try {
       setSuccessStatus({ status: STATUS.loading });
       //Call API

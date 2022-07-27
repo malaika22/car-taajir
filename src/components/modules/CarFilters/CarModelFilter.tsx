@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image';
+import { useState } from 'react';
 
 const CarModelFilter = () => {
-  const filterTabs = ["Make", "Body Style"];
-  const [selectedTab, setSelectedTab] = useState("Make");
+  const filterTabs = ['Make', 'Body Style'];
+  const [selectedTab, setSelectedTab] = useState('Make');
   const handleSelectTab = (tab: string) => {
     setSelectedTab(tab);
   };
@@ -12,7 +12,7 @@ const CarModelFilter = () => {
       <div className='filter-tabs flex w-full relative text-center mb-5'>
         {filterTabs.map((tab) => (
           <div
-            className={`pb-3 tab w-28 ${selectedTab === tab && "active"}`}
+            className={`pb-3 tab w-28 ${selectedTab === tab && 'active'}`}
             onClick={() => handleSelectTab(tab)}
           >
             {tab}
@@ -29,7 +29,7 @@ const CarModelFilter = () => {
         <button className='bg-gradient-to-r from-[#EF6212] to-[#BD2D00] py-4 px-8 rounded-md flex items-center'>
           <span className='mr-5 flex'>
             <Image
-              src={"/images/icons/search-icon.png"}
+              src={'/images/icons/search-icon.png'}
               width={15}
               height={15}
               objectFit='contain'

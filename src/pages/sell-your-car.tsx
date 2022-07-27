@@ -1,8 +1,8 @@
-import { WizardPostAd } from "@/components/views";
+import { WizardPostAd } from '@/components/views';
 
 const SellCarPage = () => {
   return (
-    <div className='max-w-5xl mx-auto'>
+    <div className='bg-[#E5E5E5]'>
       <WizardPostAd />
     </div>
   );

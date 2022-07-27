@@ -1,11 +1,11 @@
-import { Dispatch, SetStateAction, useState } from "react";
-import DefaultLogin from "./DefaultLogin";
+import { Dispatch, SetStateAction, useState } from 'react';
+import DefaultLogin from './DefaultLogin';
 
 const Login = () => {
-  const [loginView, setLoginView] = useState("default");
+  const [loginView, setLoginView] = useState('default');
   const renderFields = () => {
     switch (loginView) {
-      case "default":
+      case 'default':
         return <DefaultLogin />;
     }
   };

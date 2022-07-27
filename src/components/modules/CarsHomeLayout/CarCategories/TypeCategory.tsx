@@ -1,11 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef } from "react";
-import { Navigation } from "swiper";
-import { shopByType } from "@/utils/constant";
-import "swiper/css";
-import "swiper/css/navigation";
-import { ICarCategory } from "@/types/general.types";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useRef } from 'react';
+import { Navigation } from 'swiper';
+import { shopByType } from '@/utils/constant';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { ICarCategory } from '@/types/general.types';
+import Image from 'next/image';
 
 interface ICarType {
   category: ICarCategory;

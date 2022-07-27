@@ -1,2 +1,2 @@
-export { default as CarBackground } from "./CarBackground";
-export { default as ShopByLocation } from "./ShopByLocation";
+export { default as CarBackground } from './CarBackground';
+export { default as ShopByLocation } from './ShopByLocation';

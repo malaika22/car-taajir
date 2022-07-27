@@ -1,6 +1,6 @@
-import { ICarCategory } from "@/types/general.types";
-import { shopByBrand } from "@/utils/constant";
-import Image from "next/image";
+import { ICarCategory } from '@/types/general.types';
+import { shopByBrand } from '@/utils/constant';
+import Image from 'next/image';
 
 interface ICarBrand {
   category: ICarCategory;

@@ -1,5 +1,5 @@
-import BrandCategory from "./BrandCategory";
-import TypeCategory from "./TypeCategory";
+import BrandCategory from './BrandCategory';
+import TypeCategory from './TypeCategory';
 
 const CarCategories = () => {
   return (

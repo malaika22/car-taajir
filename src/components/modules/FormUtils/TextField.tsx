@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { UseFormRegister } from "react-hook-form";
-import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useState } from 'react';
+import { UseFormRegister } from 'react-hook-form';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 interface ITextFieldProps {
   placeholder: string;
   register?: UseFormRegister<any>;
@@ -24,7 +24,7 @@ const TextField = ({
   required,
   error,
   toggleVisibility,
-  type = "text",
+  type = 'text',
 }: ITextFieldProps) => {
   const [visibility, setVisibility] = useState(false);
   return (
@@ -42,9 +42,9 @@ const TextField = ({
             {...register(id)}
             placeholder={placeholder}
             disabled={disabled}
-            type={type === "password" && visibility ? "password" : "text"}
+            type={type === 'password' && visibility ? 'password' : 'text'}
             className={`${
-              toggleVisibility && "pr-10"
+              toggleVisibility && 'pr-10'
             } bg-white relative p-3 w-full transition-all ease-in-out duration-[.15s] border-[#B5B5B5] border-2 rounded-md focus-visible:outline-none focus:border-[#80bdff] focus:shadow-[0px_0px_0px_0.2rem_rgb(0,123,255,0.25)]`}
             id={id}
           />
@@ -53,13 +53,13 @@ const TextField = ({
             value={value}
             type={type}
             className={`${
-              toggleVisibility && "pr-10"
+              toggleVisibility && 'pr-10'
             } bg-white relative p-3 w-full transition-all ease-in-out duration-[.15s] border-[#B5B5B5] border-2 rounded-md focus-visible:outline-none focus:border-[#80bdff] focus:shadow-[0px_0px_0px_0.2rem_rgb(0,123,255,0.25)]`}
             id={id}
           />
         )}
 
-        {type === "password" && toggleVisibility && (
+        {type === 'password' && toggleVisibility && (
           <div className='absolute top-0 right-0'>
             <button
               type='button'

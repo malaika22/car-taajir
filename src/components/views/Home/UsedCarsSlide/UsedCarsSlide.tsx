@@ -1,12 +1,12 @@
-import { Anchor } from "@/components/modules";
-import Image from "next/image";
+import { Anchor } from '@/components/modules';
+import Image from 'next/image';
 
 const UsedCarsSlide = () => {
   return (
     <div className='w-full h-full mx-auto flex items-center'>
       <div className='w-[300px] h-[300px] relative mx-auto flex-1'>
         <Image
-          src={"/images/landingPage/homeCarousel/usedCars.png"}
+          src={'/images/landingPage/homeCarousel/usedCars.png'}
           layout='fill'
           objectFit='contain'
         />

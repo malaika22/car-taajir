@@ -1,24 +1,24 @@
-import { Anchor, Logo } from "@/components/modules";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { Anchor, Logo } from '@/components/modules';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Header = () => {
   const { pathname } = useRouter();
   console.log(pathname);
   const links = [
-    { title: "Find New Cars", href: "/new-cars" },
-    { title: "Find Used Cars", href: "/used-cars" },
-    { title: "Sell Your Car", href: "/sell-your-car" },
-    { title: "Blog", href: "/blogs" },
+    { title: 'Find New Cars', href: '/new-cars' },
+    { title: 'Find Used Cars', href: '/used-cars' },
+    { title: 'Sell Your Car', href: '/sell-your-car' },
+    { title: 'Blog', href: '/blogs' },
   ];
-  const optionalPaths = pathname === "/sell-your-car" || "/sign-up" || "/login";
-  console.log("optionalPath", optionalPaths);
+  const optionalPaths = pathname === '/sell-your-car' || '/sign-up' || '/login';
+  console.log('optionalPath', optionalPaths);
   return (
     <nav
       className={`flex  h-[95px]  px-24 py-6 items-center justify-between w-full z-10 ${
         optionalPaths
-          ? "sticky top-0 bg-[#000000]"
-          : "fixed top-0 bg-[#0000009C]"
+          ? 'sticky top-0 bg-[#000000]'
+          : 'fixed top-0 bg-[#0000009C]'
       } `}
     >
       <div className='flex-1 flex gap-x-8'>

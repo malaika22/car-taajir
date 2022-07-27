@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const FeaturedCars = () => {
   return (
@@ -10,25 +10,25 @@ const FeaturedCars = () => {
         <div className='grid grid-cols-2 flex-1'>
           <div className='w-full h-[150px] relative'>
             <Image
-              src={"/images/findCars/featured-cars/featured-one.png"}
+              src='/images/findCars/featured-cars/featured-one.png'
               layout='fill'
             />
           </div>
           <div className='w-full h-[150px] relative'>
             <Image
-              src={"/images/findCars/featured-cars/featured-two.png"}
+              src='/images/findCars/featured-cars/featured-two.png'
               layout='fill'
             />
           </div>
           <div className='w-full h-[150px] relative'>
             <Image
-              src={"/images/findCars/featured-cars/featured-three.png"}
+              src='/images/findCars/featured-cars/featured-three.png'
               layout='fill'
             />
           </div>
           <div className='w-full h-[150px] relative'>
             <Image
-              src={"/images/findCars/featured-cars/featured-four.png"}
+              src='/images/findCars/featured-cars/featured-four.png'
               layout='fill'
             />
           </div>
@@ -45,7 +45,7 @@ const FeaturedCars = () => {
             <div className='flex flex-col justify-end text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src={"/images/findCars/featured-cars/speedometer.png"}
+                  src='/images/findCars/featured-cars/speedometer.png'
                   layout='fill'
                 />
               </div>
@@ -54,7 +54,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src={"/images/findCars/featured-cars/gas-station.png"}
+                  src='/images/findCars/featured-cars/gas-station.png'
                   layout='fill'
                 />
               </div>
@@ -63,7 +63,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src={"/images/findCars/featured-cars/gear-box.png"}
+                  src='/images/findCars/featured-cars/gear-box.png'
                   layout='fill'
                 />
               </div>
@@ -72,7 +72,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src={"/images/findCars/featured-cars/planner.png"}
+                  src='/images/findCars/featured-cars/planner.png'
                   layout='fill'
                 />
               </div>
@@ -81,7 +81,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src={"/images/findCars/featured-cars/air-bag.png"}
+                  src='/images/findCars/featured-cars/air-bag.png'
                   layout='fill'
                 />
               </div>
@@ -90,7 +90,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src={"/images/findCars/featured-cars/steerig-wheel.png"}
+                  src='/images/findCars/featured-cars/steerig-wheel.png'
                   layout='fill'
                 />
               </div>

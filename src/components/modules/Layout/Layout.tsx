@@ -1,6 +1,6 @@
-import { Children } from "@/types/general.types";
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import { Children } from '@/types/general.types';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
 
 interface ILayout {
   children: Children;

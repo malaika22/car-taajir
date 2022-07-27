@@ -1,14 +1,14 @@
-import { Anchor, ForgetPasswordModal, TextField } from "@/components/modules";
-import { ILogin } from "@/types/credentials.types";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Dispatch, SetStateAction, useState } from "react";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import { Anchor, ForgetPasswordModal, TextField } from '@/components/modules';
+import { ILogin } from '@/types/credentials.types';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
 
 const DefaultLogin = () => {
   const loginSchema = yup.object({
-    email: yup.string().email().required("Email is required!"),
-    password: yup.string().required("Password is required!"),
+    email: yup.string().email().required('Email is required!'),
+    password: yup.string().required('Password is required!'),
   });
 
   const {
@@ -61,11 +61,11 @@ const DefaultLogin = () => {
           </div>
         </form>
         <div className='text-xs'>
-          By Signing In you agree to the{" "}
+          By Signing In you agree to the{' '}
           <Anchor href='#' className='text-[#0C45B2] font-bold'>
             Terms of Services
-          </Anchor>{" "}
-          and{" "}
+          </Anchor>{' '}
+          and{' '}
           <Anchor href='#' className='text-[#0C45B2] font-bold'>
             Privacy Policy
           </Anchor>

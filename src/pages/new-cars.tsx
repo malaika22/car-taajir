@@ -2,9 +2,9 @@ import {
   CarModelFilter,
   CarCategory,
   CarBackground,
-} from "@/components/modules";
-import { ShopByLocation } from "@/components/modules/CarsHomeLayout";
-import { ShopByStyle } from "@/components/views";
+} from '@/components/modules';
+import { ShopByLocation } from '@/components/modules/CarsHomeLayout';
+import { ShopByStyle } from '@/components/views';
 
 const NewCars = () => {
   return (
