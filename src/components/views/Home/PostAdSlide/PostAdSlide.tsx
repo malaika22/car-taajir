@@ -1,5 +1,6 @@
-import { Anchor } from '@/components/modules';
 import Image from 'next/image';
+
+import { Anchor } from '@/modules';
 
 const PostAdSlide = () => {
   return (
@@ -24,9 +25,10 @@ const PostAdSlide = () => {
       <div className=' w-[300px] h-[500px] relative mx-auto flex-1'>
         <div className='z-[99] right-[14px] absolute top-[105px] h-[400px] w-[400px]'>
           <Image
-            src={'/images/landingPage/homeCarousel/postAd.png'}
+            src='/images/landingPage/homeCarousel/postAd.png'
             layout='fill'
             objectFit='contain'
+            alt='Post ad'
           />
         </div>
 

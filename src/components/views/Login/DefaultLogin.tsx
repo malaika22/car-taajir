@@ -1,9 +1,10 @@
-import { Anchor, ForgetPasswordModal, TextField } from '@/components/modules';
-import { ILogin } from '@/types/credentials.types';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { ILogin } from 'types/credentials.types';
 import * as yup from 'yup';
+
+import { Anchor, ForgetPasswordModal, TextField } from '@/modules';
 
 const DefaultLogin = () => {
   const loginSchema = yup.object({
@@ -20,7 +21,9 @@ const DefaultLogin = () => {
   });
 
   const [forgetPassword, setForgetPassword] = useState(false);
-  const handleLogin = (values: ILogin) => {};
+  const handleLogin = (values: ILogin) => {
+    console.log('values', values);
+  };
   return (
     <>
       <div>

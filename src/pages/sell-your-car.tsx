@@ -1,4 +1,4 @@
-import { WizardPostAd } from '@/components/views';
+import { WizardPostAd } from '@views';
 
 const SellCarPage = () => {
   return (

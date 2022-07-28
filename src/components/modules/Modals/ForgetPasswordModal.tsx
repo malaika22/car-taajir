@@ -1,11 +1,12 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { Dispatch, SetStateAction, Fragment, useState } from 'react';
-import * as yup from 'yup';
-import { IoIosArrowBack } from 'react-icons/io';
-import TextField from '../FormUtils/TextField';
-import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { STATUS } from '@/types/general.types';
+import { Dispatch, Fragment, SetStateAction, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { IoIosArrowBack } from 'react-icons/io';
+import { STATUS } from 'types/general.types';
+import * as yup from 'yup';
+
+import TextField from '../FormUtils/TextField';
 
 interface IForgetPassword {
   email: string;
@@ -29,10 +30,8 @@ const ForgetPasswordModal = ({
     resolver: yupResolver(forgetPasswordSchema),
   });
   const [successStatus, setSuccessStatus] = useState({ status: STATUS.idle });
-  console.log('modal visible', visible, errors);
 
   const handleForgetPassword = (values: IForgetPassword) => {
-    console.log('values', values);
     try {
       setSuccessStatus({ status: STATUS.loading });
       //Call API
@@ -185,10 +184,7 @@ const ForgetPasswordModal = ({
                 leaveTo='opacity-0 scale-95'
               >
                 <Dialog.Panel className='h-[400px] w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
-                  <Dialog.Title
-                    // as='h3'
-                    className='text-lg font-medium leading-6 text-gray-900'
-                  >
+                  <Dialog.Title className='text-lg font-medium leading-6 text-gray-900'>
                     <div className='inline-block cursor-pointer'>
                       <IoIosArrowBack className='text-2xl' />
                     </div>
@@ -211,10 +207,7 @@ const ForgetPasswordModal = ({
                     </div>
 
                     <div className='mt-4'>
-                      <button
-                        className='bg-gradient-to-r from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg h-12 w-52 '
-                        // onClick={() => onClose(false)}
-                      >
+                      <button className='bg-gradient-to-r from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg h-12 w-52 '>
                         Continue
                       </button>
                     </div>

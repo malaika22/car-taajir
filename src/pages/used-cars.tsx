@@ -1,10 +1,11 @@
+import { FeaturedCars } from '@views';
+
 import {
   CarBackground,
   CarCategory,
   CarModelFilter,
-} from '@/components/modules';
-import { ShopByLocation } from '@/components/modules/CarsHomeLayout';
-import { FeaturedCars } from '@/components/views';
+  ShopByLocation,
+} from '@/modules';
 
 const UsedCars = () => {
   return (

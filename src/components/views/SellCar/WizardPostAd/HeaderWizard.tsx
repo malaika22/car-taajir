@@ -16,7 +16,7 @@ const HeaderWizard = ({ activeIndex }: { activeIndex: number }) => {
           }`}
         >
           <div className='h-6 w-10 absolute top-[-6px] right-[-30px]'>
-            <Image src={'/images/wizardCar.png'} layout='fill' />
+            <Image src='/images/wizardCar.png' layout='fill' alt='Wizard car' />
           </div>
         </div>
       </div>

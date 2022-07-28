@@ -1,4 +1,4 @@
-import { wizardConstants } from '@/utils/constant';
+import { wizardConstants } from 'utils/constant';
 import * as yup from 'yup';
 
 export function checkIfFilesAreTooBig(files?: [File]): boolean {
@@ -28,19 +28,22 @@ export function checkIfFilesAreCorrectType(files?: [File]): boolean {
 
 export const wizardSchema = yup.object({
   basicInformation: yup.object({
-    city: yup.string().oneOf(wizardConstants.cities).required('Required'),
-    carInfo: yup.object({
-      modelYear: yup
-        .string()
-        .oneOf(wizardConstants.modelYear)
-        .required('Required'),
-      make: yup.string().oneOf(wizardConstants.make).required('Required!'),
-      model: yup.string().oneOf(wizardConstants.model).required('Required!'),
-      version: yup
-        .string()
-        .oneOf(wizardConstants.versions)
-        .required('Required!'),
-    }),
+    city: yup
+      .string()
+      .oneOf(wizardConstants.cities)
+      .required('City is required!'),
+    // carInfo: yup.object({
+    //   modelYear: yup
+    //     .string()
+    //     .oneOf(wizardConstants.modelYear)
+    //     .required('Required'),
+    //   make: yup.string().oneOf(wizardConstants.make).required('Required!'),
+    //   model: yup.string().oneOf(wizardConstants.model).required('Required!'),
+    //   version: yup
+    //     .string()
+    //     .oneOf(wizardConstants.versions)
+    //     .required('Required!'),
+    // }),
     registeredIn: yup.string().oneOf(wizardConstants.resgisteredCities),
     exteriorColor: yup
       .string()
@@ -50,7 +53,7 @@ export const wizardSchema = yup.object({
     price: yup.number().required('Required!!'),
     description: yup
       .string()
-      .min(10, 'Description is too short')
+      // .min(10, 'Description is too short')
       .required('Required!!'),
   }),
   uploadPictures: yup.object({

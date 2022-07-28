@@ -1,5 +1,4 @@
-import { shopByLocation } from '@/utils/constant';
-import Image from 'next/image';
+import { shopByLocation } from 'utils/constant';
 
 const ShopByLocation = () => {
   return (
@@ -11,6 +10,7 @@ const ShopByLocation = () => {
         <div className='grid grid-cols-5 gap-x-4'>
           {shopByLocation.map((location) => (
             <div
+              key={location.city}
               style={{ backgroundImage: `url(${location.src})` }}
               className='w-full h-[130px] rounded-[10px] bg-cover flex items-center justify-center cursor-pointer'
             >

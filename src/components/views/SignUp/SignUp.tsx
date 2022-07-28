@@ -2,12 +2,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { IPhone, ISignup } from 'types/credentials.types';
 import * as yup from 'yup';
 import 'yup-phone';
 
-import { Anchor, PhoneNumberInput, TextField } from '@/components/modules';
-
-import { IPhone, ISignup } from '@/types/credentials.types';
+import { Anchor, PhoneNumberInput, TextField } from '@/modules';
 
 const SignUp = () => {
   const [signUpType, setSignUpType] = useState<string>('default');
@@ -31,6 +30,7 @@ const SignUp = () => {
               src='/images/authentication/google-icon.png'
               layout='fill'
               objectFit='contain'
+              alt='Google icon'
             />
           </div>
           <div
@@ -46,6 +46,7 @@ const SignUp = () => {
               src='/images/authentication/phone-icon.png'
               layout='fill'
               objectFit='contain'
+              alt='Phone Icon'
             />
           </div>
           <div
@@ -80,7 +81,6 @@ const PhoneNumberView = () => {
     resolver: yupResolver(phoneSchema),
   });
   const phoneRegister = (values: IPhone) => {
-    console.log('values', values);
     setCodeStep(true);
     try {
       //call signup API
@@ -177,7 +177,6 @@ const DefaultSignup = () => {
   const [error, setError] = useState<string>('');
 
   const handleSignup = (values: ISignup) => {
-    console.log('values', values);
     try {
       //call signup API
     } catch (err) {

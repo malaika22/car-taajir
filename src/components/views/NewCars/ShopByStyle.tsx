@@ -12,6 +12,7 @@ const ShopByStyle = () => {
             src='/images/findCars/newCars/commuter.png'
             layout='fill'
             objectFit='contain'
+            alt='Commuter'
           />
         </div>
         <div className='w-full h-[180px] relative flex items-center mx-auto'>
@@ -19,6 +20,7 @@ const ShopByStyle = () => {
             src='/images/findCars/newCars/eco-friendly.png'
             layout='fill'
             objectFit='contain'
+            alt='Friendly'
           />
         </div>
         <div className='w-full h-[180px] relative flex items-center mx-auto'>
@@ -26,6 +28,7 @@ const ShopByStyle = () => {
             src='/images/findCars/newCars/family.png'
             layout='fill'
             objectFit='contain'
+            alt='Family'
           />
         </div>
         <div className='w-full h-[180px] relative flex items-center mx-auto'>
@@ -33,6 +36,7 @@ const ShopByStyle = () => {
             src='/images/findCars/newCars/outdoor.png'
             layout='fill'
             objectFit='contain'
+            alt='Outdoor'
           />
         </div>
       </div>

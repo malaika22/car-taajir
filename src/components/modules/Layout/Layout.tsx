@@ -1,4 +1,5 @@
-import { Children } from '@/types/general.types';
+import { Children } from 'types/general.types';
+
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 

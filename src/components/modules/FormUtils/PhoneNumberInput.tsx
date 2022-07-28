@@ -1,9 +1,4 @@
-import {
-  useFormContext,
-  UseFormRegister,
-  Controller,
-  useForm,
-} from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import Input from 'react-phone-number-input/input';
 
 interface IPhoneNumberProps {

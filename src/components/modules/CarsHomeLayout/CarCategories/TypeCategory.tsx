@@ -1,11 +1,12 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import Image from 'next/image';
 import { useRef } from 'react';
 import { Navigation } from 'swiper';
-import { shopByType } from '@/utils/constant';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { ICarCategory } from 'types/general.types';
+import { shopByType } from 'utils/constant';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { ICarCategory } from '@/types/general.types';
-import Image from 'next/image';
 
 interface ICarType {
   category: ICarCategory;
@@ -14,7 +15,7 @@ interface ICarType {
 const TypeCategory = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  console.log(shopByType);
+
   return (
     <div className='mb-14'>
       <h2 className='text-[#444343] text-lg font-bold mb-5'>Shop by Type</h2>
@@ -40,7 +41,7 @@ const TypeCategory = () => {
           }}
         >
           {shopByType.map((category) => (
-            <SwiperSlide>
+            <SwiperSlide key={category.title}>
               <TypeCard category={category} />
             </SwiperSlide>
           ))}
@@ -50,7 +51,11 @@ const TypeCategory = () => {
           className='nav-previous w-6 h-4 relative cursor-pointer'
           ref={nextRef}
         >
-          <Image src='/images/icons/right-arrow-icon.png' layout='fill' />
+          <Image
+            src='/images/icons/right-arrow-icon.png'
+            layout='fill'
+            alt='right-arrow'
+          />
         </div>
         {/* </div> */}
       </div>

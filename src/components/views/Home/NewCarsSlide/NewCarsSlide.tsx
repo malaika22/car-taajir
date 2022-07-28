@@ -1,14 +1,16 @@
-import { Anchor } from '@/components/modules';
 import Image from 'next/image';
+
+import { Anchor } from '@/modules';
 
 const NewCarsSlide = () => {
   return (
     <div className='w-[650px]  mx-auto'>
       <div className='w-[300px] h-[200px] relative mx-auto mt-7'>
         <Image
-          src={'/images/landingPage/homeCarousel/newCars.png'}
+          src='/images/landingPage/homeCarousel/newCars.png'
           layout='fill'
           objectFit='contain'
+          alt='Home carousel'
         />
       </div>
       <div className='text-white text-center'>

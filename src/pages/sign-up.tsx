@@ -1,5 +1,6 @@
-import { AuthContainer } from '@/components/modules';
-import { SignUp } from '@/components/views';
+import { SignUp } from '@views';
+
+import { AuthContainer } from '@/modules';
 
 const SignupPage = () => {
   return (

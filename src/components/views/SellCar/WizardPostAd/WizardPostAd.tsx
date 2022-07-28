@@ -1,12 +1,9 @@
-import {
-  PagesWizard,
-  wizardSchema,
-  WizardSchema,
-} from '@/schemas/wizard.schema';
-import { STATUS } from '@/types/general.types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FC, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { PagesWizard, WizardSchema, wizardSchema } from 'schemas/wizard.schema';
+import { STATUS } from 'types/general.types';
+
 import BodyWizard from './BodyWizard';
 import HeaderWizard from './HeaderWizard';
 import AdditionalInformation from './PagesWizard/AdditionalInformation';
@@ -64,9 +61,9 @@ const WizardPostAd = () => {
     setActiveIndex(activeIndex ? activeIndex - 1 : 0);
   };
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <div className='max-w-6xl mx-auto py-10'>
+    <div className='max-w-6xl mx-auto py-10'>
+      <FormProvider {...methods}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <HeaderWizard activeIndex={activeIndex} />
           <BodyWizard
             pages={pages}
@@ -74,9 +71,9 @@ const WizardPostAd = () => {
             increment={handleIncrement}
             decrement={handleDrecement}
           />
-        </div>
-      </form>
-    </FormProvider>
+        </form>
+      </FormProvider>
+    </div>
   );
 };
 

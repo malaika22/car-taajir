@@ -1,7 +1,5 @@
-import { HomeCarousel } from '@/components/views/index';
+import { HomeCarousel } from '@views';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 
 const Home: NextPage = () => {
   return (

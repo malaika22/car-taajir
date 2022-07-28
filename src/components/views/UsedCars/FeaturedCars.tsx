@@ -12,6 +12,7 @@ const FeaturedCars = () => {
             <Image
               src='/images/findCars/featured-cars/featured-one.png'
               layout='fill'
+              alt='Featured car'
             />
           </div>
           <div className='w-full h-[150px] relative'>
@@ -24,12 +25,14 @@ const FeaturedCars = () => {
             <Image
               src='/images/findCars/featured-cars/featured-three.png'
               layout='fill'
+              alt='Featured car'
             />
           </div>
           <div className='w-full h-[150px] relative'>
             <Image
               src='/images/findCars/featured-cars/featured-four.png'
               layout='fill'
+              alt='Featured car'
             />
           </div>
         </div>
@@ -47,6 +50,7 @@ const FeaturedCars = () => {
                 <Image
                   src='/images/findCars/featured-cars/speedometer.png'
                   layout='fill'
+                  alt='Featured car'
                 />
               </div>
               <div className='text-[12px]'>92,000 km</div>
@@ -56,6 +60,7 @@ const FeaturedCars = () => {
                 <Image
                   src='/images/findCars/featured-cars/gas-station.png'
                   layout='fill'
+                  alt='Featured car'
                 />
               </div>
               <div className='text-[12px]'>Petrol</div>
@@ -65,6 +70,7 @@ const FeaturedCars = () => {
                 <Image
                   src='/images/findCars/featured-cars/gear-box.png'
                   layout='fill'
+                  alt='Featured car'
                 />
               </div>
               <div className='text-[12px]'>Automatic</div>
@@ -74,6 +80,7 @@ const FeaturedCars = () => {
                 <Image
                   src='/images/findCars/featured-cars/planner.png'
                   layout='fill'
+                  alt='Featured car'
                 />
               </div>
               <div className='text-[12px]'>2017</div>
@@ -83,6 +90,7 @@ const FeaturedCars = () => {
                 <Image
                   src='/images/findCars/featured-cars/air-bag.png'
                   layout='fill'
+                  alt='Featured car'
                 />
               </div>
               <div className='text-[12px]'>Air bag</div>
@@ -92,6 +100,7 @@ const FeaturedCars = () => {
                 <Image
                   src='/images/findCars/featured-cars/steerig-wheel.png'
                   layout='fill'
+                  alt='Featured car'
                 />
               </div>
               <div className='text-[12px]'>Power Steering</div>

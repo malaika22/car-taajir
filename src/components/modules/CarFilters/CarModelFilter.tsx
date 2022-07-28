@@ -14,6 +14,7 @@ const CarModelFilter = () => {
           <div
             className={`pb-3 tab w-28 ${selectedTab === tab && 'active'}`}
             onClick={() => handleSelectTab(tab)}
+            key={tab}
           >
             {tab}
           </div>
@@ -29,10 +30,11 @@ const CarModelFilter = () => {
         <button className='bg-gradient-to-r from-[#EF6212] to-[#BD2D00] py-4 px-8 rounded-md flex items-center'>
           <span className='mr-5 flex'>
             <Image
-              src={'/images/icons/search-icon.png'}
+              src='/images/icons/search-icon.png'
               width={15}
               height={15}
               objectFit='contain'
+              alt='search-icon'
             />
           </span>
 

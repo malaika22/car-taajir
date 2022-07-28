@@ -1,5 +1,5 @@
-import { Children } from '@/types/general.types';
 import Image from 'next/image';
+import { Children } from 'types/general.types';
 
 interface IAuthContainer {
   children: Children;
@@ -24,6 +24,7 @@ const AuthContainer = ({ children, pageTitle }: IAuthContainer) => {
               src='/images/authentication/authentication-banner.png'
               layout='fill'
               objectFit='contain'
+              alt={pageTitle}
             />
           </div>
         </div>

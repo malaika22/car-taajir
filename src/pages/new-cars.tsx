@@ -1,10 +1,11 @@
+import { ShopByStyle } from '@views';
+
 import {
-  CarModelFilter,
-  CarCategory,
   CarBackground,
-} from '@/components/modules';
-import { ShopByLocation } from '@/components/modules/CarsHomeLayout';
-import { ShopByStyle } from '@/components/views';
+  CarCategory,
+  CarModelFilter,
+  ShopByLocation,
+} from '@/modules';
 
 const NewCars = () => {
   return (

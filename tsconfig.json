@@ -13,10 +13,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"],
-      "~/*": ["./public/*"]
+      "@/modules": ["components/modules"],
+      "@/modules/*": ["components/modules/*"],
+      "@views": ["components/views"],
+      "@views/*": ["components/views/*"]
     },
     "incremental": true
   },

@@ -1,14 +1,13 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
-
-import NewCarsSlide from './NewCarsSlide/NewCarsSlide';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 // eslint-disable-next-line
 import 'swiper/css/bundle';
+
+import NewCarsSlide from './NewCarsSlide/NewCarsSlide';
 import PostAdSlide from './PostAdSlide/PostAdSlide';
 import UsedCarsSlide from './UsedCarsSlide/UsedCarsSlide';
 
@@ -24,12 +23,10 @@ const HomeCarousel = () => {
   return (
     <div className='h-[500px] px-32 '>
       <Swiper
-        direction={'vertical'}
+        direction='vertical'
         className='home-swiper'
         pagination={pagination}
         modules={[Pagination]}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
           <NewCarsSlide />

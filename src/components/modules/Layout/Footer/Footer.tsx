@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Anchor from '../../Anchor/Anchor';
+
 import Logo from '../../Logo';
 
 interface IFooter {
@@ -75,7 +75,7 @@ const Footer = () => {
       <Logo />
       <div className='flex justify-between px-24 mt-6'>
         {footerLinks.map((footerObj: IFooter) => (
-          <div>
+          <div key={footerObj.category}>
             <div className='text-white font-bold mb-4'>
               {footerObj.category}
             </div>
@@ -100,13 +100,13 @@ const Footer = () => {
           <div className='text-white font-bold mb-4'>Follow Us On</div>
           <div className='grid grid-cols-3 gap-x-3'>
             <div className='relative w-7 h-7'>
-              <Image src='/images/icons/insta.png' layout='fill' />
+              <Image src='/images/icons/insta.png' layout='fill' alt='Insta' />
             </div>
             <div className='relative w-7 h-7'>
-              <Image src='/images/icons/phone.png' layout='fill' />
+              <Image src='/images/icons/phone.png' layout='fill' alt='Phone' />
             </div>
             <div className='relative w-7 h-7'>
-              <Image src='/images/icons/fb.png' layout='fill' />
+              <Image src='/images/icons/fb.png' layout='fill' alt='Fb' />
             </div>
           </div>
         </div>
