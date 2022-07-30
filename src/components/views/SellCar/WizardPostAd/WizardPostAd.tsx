@@ -14,6 +14,11 @@ import VerifyNumber from './PagesWizard/VerifyNumber';
 const WizardPostAd = () => {
   const methods = useForm<WizardSchema>({
     resolver: yupResolver(wizardSchema),
+    defaultValues: {
+      uploadPictures: {
+        files: [],
+      },
+    },
   });
   const [formState, setFormState] = useState<{
     status: STATUS;

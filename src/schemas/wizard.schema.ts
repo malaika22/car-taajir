@@ -49,8 +49,15 @@ export const wizardSchema = yup.object({
       .string()
       .oneOf(wizardConstants.exteriorColors)
       .required('Required!!'),
-    milage: yup.number().required('Required!!'),
-    price: yup.number().required('Required!!'),
+
+    milage: yup
+      .number()
+      .typeError('Milage should be a number')
+      .required('Required!!'),
+    price: yup
+      .number()
+      .typeError('Price should be a number')
+      .required('Required!!'),
     description: yup
       .string()
       // .min(10, 'Description is too short')
@@ -59,7 +66,8 @@ export const wizardSchema = yup.object({
   uploadPictures: yup.object({
     files: yup
       .array()
-      .nullable()
+      .min(2, 'Images should be more than 2')
+      .max(8, "Can't upload more than 7 images")
       .required('Required!!')
       .test('is-correct-file', 'VALIDATION_FIELD_FILE_BIG', (values) => {
         let valid = true;
