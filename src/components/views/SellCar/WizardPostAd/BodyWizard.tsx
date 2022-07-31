@@ -6,6 +6,7 @@ import { PagesWizard, WizardSchema } from 'schemas/wizard.schema';
 interface IBodyWizard {
   increment: () => void;
   decrement: () => void;
+  formSubmit: (values: WizardSchema) => void;
   activeIndex: number;
   pages: {
     Component: FC<any>;
@@ -21,31 +22,31 @@ const BodyWizard = ({
   decrement,
   pages,
   activeIndex,
+  formSubmit,
 }: IBodyWizard) => {
   const { Component, id, label, subtitle, title } = pages[activeIndex];
   const { handleSubmit, trigger, getValues } = useFormContext<WizardSchema>();
-
-  // const onSubmit = (values: WizardSchema) => {
-  //   console.log('Values', values);
-  // };
-
-  const formSubmit = (values: WizardSchema) => {
-    console.log('values', values);
-  };
 
   const handleNextPage = async () => {
     let clear;
     if (pages[activeIndex].id === 'uploadPicture') {
       clear = await trigger('uploadPictures.files');
-      console.log('clear', clear);
     } else {
       clear = await trigger(pages[activeIndex].id as any);
     }
     if (activeIndex < pages.length - 1 && clear) increment();
+
+    if (
+      (clear && pages[activeIndex].id === 'additionalInformation') ||
+      pages[activeIndex].id === 'verifyNumber'
+    ) {
+      handleSubmit(formSubmit)();
+    }
   };
+
   return (
-    <div className='bg-white max-w-4xl mx-auto rounded-lg shadow-[0px_4px_4px_0_rgb(0,0,0,0.25)] my-4'>
-      {activeIndex ? (
+    <div>
+      {activeIndex && activeIndex !== pages.length - 1 ? (
         <div
           onClick={() => activeIndex !== 0 && decrement()}
           className='px-10 pt-4 flex items-center group cursor-pointer'

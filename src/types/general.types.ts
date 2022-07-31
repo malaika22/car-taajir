@@ -6,6 +6,7 @@ export enum STATUS {
   error,
   success,
   idle,
+  preview,
 }
 export interface ICarCategory {
   title: string;

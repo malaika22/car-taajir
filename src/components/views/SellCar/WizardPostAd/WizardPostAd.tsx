@@ -1,6 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FC, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { BiCommentError } from 'react-icons/bi';
+import { FiUpload } from 'react-icons/fi';
 import { PagesWizard, WizardSchema, wizardSchema } from 'schemas/wizard.schema';
 import { STATUS } from 'types/general.types';
 
@@ -10,24 +12,24 @@ import AdditionalInformation from './PagesWizard/AdditionalInformation';
 import BasicInformation from './PagesWizard/BasicInformation';
 import UploadPictures from './PagesWizard/UploadPictures';
 import VerifyNumber from './PagesWizard/VerifyNumber';
+import PreviewAd from './PreviewAd';
+import StatusWizard from './StatusWizard';
 
 const WizardPostAd = () => {
+  //Form Initialization
   const methods = useForm<WizardSchema>({
     resolver: yupResolver(wizardSchema),
     defaultValues: {
       uploadPictures: {
         files: [],
       },
+      additionalInformation: {
+        features: [],
+      },
     },
   });
-  const [formState, setFormState] = useState<{
-    status: STATUS;
-  }>({
-    status: STATUS.idle,
-  });
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
+  //Wizard pages Initilization
   const pages: {
     label: string;
     Component: FC<any>;
@@ -50,13 +52,56 @@ const WizardPostAd = () => {
       id: 'additionalInformation',
       Component: AdditionalInformation,
     },
-    {
-      label: 'Verify Your Number',
-      id: 'verifyNumber',
-      Component: VerifyNumber,
-    },
   ];
 
+  //State Initialization
+  const [formState, setFormState] = useState<{
+    status: STATUS;
+    data?: {
+      title: string;
+      subtitle: string;
+      Icon?: JSX.Element;
+    };
+  }>({
+    status: STATUS.idle,
+    data: {
+      title: '',
+      subtitle: '',
+    },
+  });
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [formData, setFormData] = useState<WizardSchema | undefined>();
+
+  const formSubmit = (values: WizardSchema) => {
+    //call API FOR SEND DETAILS
+    if (activeIndex !== pages.length)
+      try {
+        setFormState({
+          status: STATUS.loading,
+          data: {
+            title: "We're processing your information",
+            subtitle: 'Sit tight while we process your request.',
+            Icon: <FiUpload className='animate-bounce' />,
+          },
+        });
+        setTimeout(() => {
+          setActiveIndex(activeIndex + 1);
+          setFormState({
+            status: STATUS.idle,
+          });
+        }, 5000);
+        setFormData(values);
+      } catch (err) {
+        setFormState({
+          status: STATUS.error,
+          data: {
+            title: 'There was an error in verifying your code',
+            subtitle: 'Errorr...',
+            Icon: <BiCommentError />,
+          },
+        });
+      }
+  };
   const handleIncrement = () => {
     window.scrollTo({ left: 0, top: 80, behavior: 'smooth' });
     setActiveIndex(activeIndex + 1);
@@ -65,21 +110,36 @@ const WizardPostAd = () => {
     window.scrollTo({ left: 0, top: 80, behavior: 'smooth' });
     setActiveIndex(activeIndex ? activeIndex - 1 : 0);
   };
-  return (
-    <div className='max-w-6xl mx-auto py-10'>
-      <FormProvider {...methods}>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <HeaderWizard activeIndex={activeIndex} />
-          <BodyWizard
-            pages={pages}
-            activeIndex={activeIndex}
-            increment={handleIncrement}
-            decrement={handleDrecement}
-          />
-        </form>
-      </FormProvider>
-    </div>
-  );
+
+  if (formState.status === STATUS.preview) {
+    return <PreviewAd previewData={formData} />;
+  } else
+    return (
+      <div className='max-w-6xl mx-auto py-10'>
+        <HeaderWizard activeIndex={activeIndex} />
+        <div className='bg-white max-w-4xl mx-auto rounded-lg shadow-[0px_4px_4px_0_rgb(0,0,0,0.25)] my-4'>
+          {formState.status === STATUS.idle ? (
+            activeIndex !== pages.length ? (
+              <FormProvider {...methods}>
+                <form onSubmit={(e) => e.preventDefault()}>
+                  <BodyWizard
+                    pages={pages}
+                    activeIndex={activeIndex}
+                    increment={handleIncrement}
+                    decrement={handleDrecement}
+                    formSubmit={formSubmit}
+                  />
+                </form>
+              </FormProvider>
+            ) : (
+              <VerifyNumber setFormState={setFormState} />
+            )
+          ) : (
+            <StatusWizard formState={formState} />
+          )}
+        </div>
+      </div>
+    );
 };
 
 export default WizardPostAd;

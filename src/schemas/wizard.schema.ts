@@ -103,7 +103,7 @@ export const wizardSchema = yup.object({
       .array()
       .min(1)
       .of(yup.string().required())
-      .required('Required!!'),
+      .required('Atlest select on features'),
   }),
 });
 
