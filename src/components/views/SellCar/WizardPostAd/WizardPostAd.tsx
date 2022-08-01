@@ -12,7 +12,7 @@ import AdditionalInformation from './PagesWizard/AdditionalInformation';
 import BasicInformation from './PagesWizard/BasicInformation';
 import UploadPictures from './PagesWizard/UploadPictures';
 import VerifyNumber from './PagesWizard/VerifyNumber';
-import PreviewAd from './PreviewAd';
+import PreviewAd from './PreviewAd/PreviewAd';
 import StatusWizard from './StatusWizard';
 
 const WizardPostAd = () => {
@@ -111,35 +111,38 @@ const WizardPostAd = () => {
     setActiveIndex(activeIndex ? activeIndex - 1 : 0);
   };
 
-  if (formState.status === STATUS.preview) {
-    return <PreviewAd previewData={formData} />;
-  } else
-    return (
-      <div className='max-w-6xl mx-auto py-10'>
-        <HeaderWizard activeIndex={activeIndex} />
-        <div className='bg-white max-w-4xl mx-auto rounded-lg shadow-[0px_4px_4px_0_rgb(0,0,0,0.25)] my-4'>
-          {formState.status === STATUS.idle ? (
-            activeIndex !== pages.length ? (
-              <FormProvider {...methods}>
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <BodyWizard
-                    pages={pages}
-                    activeIndex={activeIndex}
-                    increment={handleIncrement}
-                    decrement={handleDrecement}
-                    formSubmit={formSubmit}
-                  />
-                </form>
-              </FormProvider>
+  return (
+    <div className='max-w-6xl min-h-[350px] mx-auto py-10'>
+      {true ? (
+        <PreviewAd previewData={formData} />
+      ) : (
+        <>
+          <HeaderWizard activeIndex={activeIndex} />
+          <div className='bg-white max-w-4xl mx-auto rounded-lg shadow-[0px_4px_4px_0_rgb(0,0,0,0.25)] my-4'>
+            {formState.status === STATUS.idle ? (
+              activeIndex !== pages.length ? (
+                <FormProvider {...methods}>
+                  <form onSubmit={(e) => e.preventDefault()}>
+                    <BodyWizard
+                      pages={pages}
+                      activeIndex={activeIndex}
+                      increment={handleIncrement}
+                      decrement={handleDrecement}
+                      formSubmit={formSubmit}
+                    />
+                  </form>
+                </FormProvider>
+              ) : (
+                <VerifyNumber setFormState={setFormState} />
+              )
             ) : (
-              <VerifyNumber setFormState={setFormState} />
-            )
-          ) : (
-            <StatusWizard formState={formState} />
-          )}
-        </div>
-      </div>
-    );
+              <StatusWizard formState={formState} />
+            )}
+          </div>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default WizardPostAd;
