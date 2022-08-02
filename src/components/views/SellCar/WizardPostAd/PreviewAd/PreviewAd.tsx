@@ -6,7 +6,11 @@ import { IoLocationSharp } from 'react-icons/io5';
 import { MdMessage } from 'react-icons/md';
 import { WizardSchema } from 'schemas/wizard.schema';
 
+import Comment from './Comment';
+import Features from './Features';
 import ImagesCarousel from './ImagesCarousel';
+import Specifications from './Specifications';
+import VehicleInformation from './VehicleInformation';
 
 const carData = {
   title: '2015 toyota Corolla LE',
@@ -18,30 +22,34 @@ const carData = {
     joiningDate: 'Oct 17, 2016',
     contactNumber: '0300 4883238',
   },
-  features: [
+  specifications: [
     {
       value: '92,000km',
-      icon: '',
+      icon: '/images/specifications/speedometer.png',
     },
     {
       value: 'Petrol',
-      icon: '',
+      icon: '/images/specifications/gas-station.png',
     },
     {
       value: 'Automatic',
-      icon: '',
+      icon: '/images/specifications/gear-box.png',
+    },
+    {
+      value: '2015',
+      icon: '/images/specifications/sedan.png',
     },
     {
       value: 'Air bag',
-      icon: '',
+      icon: '/images/specifications/air-bag.png',
     },
     {
       value: 'Power Steering',
-      icon: '',
+      icon: '/images/specifications/steering-wheel.png',
     },
     {
       value: '2017',
-      icon: '',
+      icon: '/images/specifications/calender.png',
     },
   ],
   vehicaleInformation: [
@@ -70,7 +78,7 @@ const carData = {
       value: '2000cc',
     },
   ],
-  carFeatures: [
+  features: [
     {
       icon: '',
       feature: 'ABS',
@@ -157,7 +165,7 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className=' w-full max-w-6xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
+              <Dialog.Panel className=' w-full max-w-6xl transform overflow-hidden rounded-2xl bg-white p-10 text-left align-middle shadow-xl transition-all'>
                 {/* <Dialog.Title className='text-lg font-medium leading-6 text-gray-900'>
                   <div className='inline-block cursor-pointer'>
                     <IoIosArrowBack />
@@ -229,6 +237,23 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
                       </div>
                     </div>
                   </div>
+                  {/* Carousel Placeholder */}
+
+                  {/* SPECIFICATIONS PLACEHOLDER */}
+                  <Specifications />
+                  {/* SPECIFICATIONS PLACEHOLDER */}
+
+                  {/* INFORMATION PLACEHOLDER */}
+                  <VehicleInformation />
+                  {/* INFORMATION PLACEHOLDER */}
+
+                  {/* FEATURES PLACEHOLDER */}
+                  <div className='grid grid-cols-2 gap-x-5'>
+                    <Features />
+                    <Comment />
+                  </div>
+
+                  {/* FEATURES PLACEHOLDER */}
                 </div>
               </Dialog.Panel>
             </Transition.Child>
