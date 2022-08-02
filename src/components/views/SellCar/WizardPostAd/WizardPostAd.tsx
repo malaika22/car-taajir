@@ -113,7 +113,7 @@ const WizardPostAd = () => {
 
   return (
     <div className='max-w-6xl min-h-[350px] mx-auto py-10'>
-      {true ? (
+      {formState.status === STATUS.preview ? (
         <PreviewAd previewData={formData} />
       ) : (
         <>
