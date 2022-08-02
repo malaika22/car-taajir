@@ -166,11 +166,6 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
               leaveTo='opacity-0 scale-95'
             >
               <Dialog.Panel className=' w-full max-w-6xl transform overflow-hidden rounded-2xl bg-white p-10 text-left align-middle shadow-xl transition-all'>
-                {/* <Dialog.Title className='text-lg font-medium leading-6 text-gray-900'>
-                  <div className='inline-block cursor-pointer'>
-                    <IoIosArrowBack />
-                  </div>
-                </Dialog.Title> */}
                 <div>
                   <div className='flex items-center justify-between'>
                     <button className='text-white rounded-lg font-bold bg-gradient-to-r h-12 w-44 from-[#2F69DA] to-[#0C45B2] shadow-[2.5px_5.06px_12.64px_0rem_rgb(0,0,0,0.25)]'>
