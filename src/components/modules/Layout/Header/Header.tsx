@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`flex  h-[95px]  px-24 py-6 items-center justify-between w-full z-10 ${
+      className={`flex  h-[95px]  px-24 py-6 items-center justify-between w-full z-30 ${
         optionalPaths
           ? 'sticky top-0 bg-[#000000]'
           : 'fixed top-0 bg-[#0000009C]'

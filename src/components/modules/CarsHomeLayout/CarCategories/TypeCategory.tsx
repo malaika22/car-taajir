@@ -24,7 +24,11 @@ const TypeCategory = () => {
           className='nav-previous w-6 h-4 relative cursor-pointer'
           ref={prevRef}
         >
-          <Image src='/images/icons/left-arrow-icon.png' layout='fill' />
+          <Image
+            src='/images/icons/left-arrow-icon.png'
+            layout='fill'
+            alt='left arrow'
+          />
         </div>
         <Swiper
           spaceBetween={20}
