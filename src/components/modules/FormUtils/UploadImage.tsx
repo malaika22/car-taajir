@@ -14,7 +14,7 @@ const UploadImage = ({ id, title, register, error, name }: IUploadImage) => {
       <div className='w-full relative'>
         <label
           htmlFor={name}
-          className='absolute top-[-10px] px-[5px] left-[20px] text-[#8B8B8B] bg-white z-50 text-sm'
+          className='absolute top-[-10px] px-[5px] left-[20px] text-[#8B8B8B] bg-white z-10 text-sm'
         >
           {title}
         </label>

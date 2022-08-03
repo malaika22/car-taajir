@@ -4,6 +4,7 @@ export { default as CarBackground } from './CarsHomeLayout/CarBackground';
 export { default as CarCategory } from './CarsHomeLayout/CarCategories/CarCategories';
 export { default as ShopByLocation } from './CarsHomeLayout/ShopByLocation';
 export { default as AuthContainer } from './Container/index';
+export { default as DateInput } from './FormUtils/DateInput';
 export { default as PhoneNumberInput } from './FormUtils/PhoneNumberInput';
 export { default as Select } from './FormUtils/Select';
 export { default as TextArea } from './FormUtils/TextArea';
