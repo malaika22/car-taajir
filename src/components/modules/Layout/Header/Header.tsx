@@ -13,7 +13,7 @@ const Header = () => {
     { title: 'Find New Cars', href: '/new-cars' },
     { title: 'Find Used Cars', href: '/used-cars' },
     { title: 'Sell Your Car', href: '/sell-your-car' },
-    { title: 'Blog', href: '/blogs' },
+    { title: 'Blogs', href: '/blogs' },
   ];
   const optionalPaths = pathname === '/sell-your-car' || '/sign-up' || '/login';
 

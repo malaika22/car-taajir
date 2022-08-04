@@ -1,3 +1,4 @@
+export { BlogBanner, BlogCard } from './Blogs/index';
 export { default as HomeCarousel } from './Home/HomeCarousel';
 export { default as Login } from './Login/index';
 export { default as ShopByStyle } from './NewCars/index';
