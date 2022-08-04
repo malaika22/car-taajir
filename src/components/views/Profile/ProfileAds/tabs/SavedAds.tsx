@@ -1,4 +1,4 @@
-import { myAds } from 'utils/constant';
+import { myAds } from 'lib/dummyData';
 
 import AdCard from '../AdCard';
 

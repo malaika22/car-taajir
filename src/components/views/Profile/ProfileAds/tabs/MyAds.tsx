@@ -1,5 +1,5 @@
+import { myAds } from 'lib/dummyData';
 import { useState } from 'react';
-import { myAds } from 'utils/constant';
 
 import AdCard from '../AdCard';
 
