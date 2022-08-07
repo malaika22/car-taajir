@@ -14,7 +14,7 @@ const UsedCars = () => {
         title='Shop the nation’s largest'
         subtitle='Used car inventory'
       />
-      <CarModelFilter />
+      <CarModelFilter className='py-5 px-10  top-[386px] absolute  right-0 left-0 ' />
       <CarCategory />
       <FeaturedCars />
       <ShopByLocation />
