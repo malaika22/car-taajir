@@ -24,7 +24,7 @@ const UsedCarsSlide = () => {
           arcu fames sit justo, sed aliquet auctor.
         </p>
         <Anchor
-          href='/new-cars'
+          href='/find-new-cars'
           className='inline-block bg-gradient-to-r from-[#F62C00] to-[#A71E00] rounded-xl px-9 py-4'
         >
           Browse Used Cars
