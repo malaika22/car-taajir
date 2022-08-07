@@ -1,18 +1,30 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-const CarModelFilter = () => {
+interface IModelFilterProps {
+  className?: string;
+}
+
+const CarModelFilter = ({ className }: IModelFilterProps) => {
+  const router = useRouter();
   const filterTabs = ['Make', 'Body Style'];
   const [selectedTab, setSelectedTab] = useState('Make');
   const handleSelectTab = (tab: string) => {
     setSelectedTab(tab);
   };
+
+  const handleSearch = () => {
+    router.push('/find-new-cars/abc?foo=bar');
+  };
   return (
-    <div className='bg-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-w-5xl rounded-2xl py-5 px-10  top-[386px] absolute w-full right-0 left-0 mx-auto'>
+    <div className='bg-white ring-1 ring-offset-2 ring-slate-50 w-full mx-auto rounded-2xl py-7 px-7'>
       <div className='filter-tabs flex w-full relative text-center mb-5'>
         {filterTabs.map((tab) => (
           <div
-            className={`pb-3 tab w-28 ${selectedTab === tab && 'active'}`}
+            className={`pb-3 tab w-28 cursor-pointer ${
+              selectedTab === tab && 'active'
+            }`}
             onClick={() => handleSelectTab(tab)}
             key={tab}
           >
@@ -27,7 +39,10 @@ const CarModelFilter = () => {
           <div>All Cities</div>
           <div>Price Rang</div>
         </div>
-        <button className='bg-gradient-to-r from-[#EF6212] to-[#BD2D00] py-4 px-8 rounded-md flex items-center'>
+        <button
+          className='bg-gradient-to-r from-[#EF6212] to-[#BD2D00] py-4 px-8 rounded-md flex items-center'
+          onClick={handleSearch}
+        >
           <span className='mr-5 flex'>
             <Image
               src='/images/icons/search-icon.png'
