@@ -10,7 +10,7 @@ const Header = () => {
   const { pathname } = useRouter();
 
   const links = [
-    { title: 'Find New Cars', href: '/new-cars' },
+    { title: 'Find New Cars', href: '/find-new-cars' },
     { title: 'Find Used Cars', href: '/used-cars' },
     { title: 'Sell Your Car', href: '/sell-your-car' },
     { title: 'Blogs', href: '/blogs' },
