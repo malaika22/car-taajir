@@ -1,8 +1,7 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { AiFillHeart } from 'react-icons/ai';
 import { BsFillTelephoneFill } from 'react-icons/bs';
-
-import Anchor from '../Anchor/Anchor';
 
 const specifications = [
   {
@@ -36,6 +35,7 @@ const specifications = [
 ];
 
 const CarCard = () => {
+  const router = useRouter();
   return (
     <div className='bg-white ring-1 ring-offset-2 ring-slate-50 rounded-lg mb-10 '>
       <div className='grid grid-cols-3'>
@@ -61,12 +61,12 @@ const CarCard = () => {
               <div className='text-[#0C45B2] text-sm font-medium my-4'>
                 Karachi, Pakistan
               </div>
-              <Anchor
-                href='/car/1'
+              <button
+                onClick={() => router.push('/find-new-cars/car/1')}
                 className='text-[#0C45B2] text-sm font-medium'
               >
                 View details
-              </Anchor>
+              </button>
             </div>
           </div>
           <div className='grid grid-cols-7 border-t-[1px] border-[#D1D1D1] pt-4'>
