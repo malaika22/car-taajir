@@ -1,16 +1,16 @@
 import { Dialog, Transition } from '@headlessui/react';
-import Image from 'next/image';
 import { Fragment } from 'react';
-import { BsFillTelephoneFill } from 'react-icons/bs';
 import { IoLocationSharp } from 'react-icons/io5';
-import { MdMessage } from 'react-icons/md';
 import { WizardSchema } from 'schemas/wizard.schema';
 
-import Comment from './Comment';
-import Features from './Features';
-import ImagesCarousel from './ImagesCarousel';
-import Specifications from './Specifications';
-import VehicleInformation from './VehicleInformation';
+import {
+  Comment,
+  Features,
+  ImagesCarousel,
+  Specifications,
+  UserProfile,
+  VehicleInformation,
+} from '@/modules';
 
 const carData = {
   title: '2015 toyota Corolla LE',
@@ -132,7 +132,6 @@ interface IPreviewAdInterface {
 }
 
 const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
-  console.log('preview data', previewData);
   return (
     <Transition appear show={true} as={Fragment}>
       <Dialog
@@ -188,49 +187,7 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
                   {/* Carousel Placeholder */}
                   <div className='flex justify-between gap-x-4'>
                     <ImagesCarousel />
-                    <div className='w-[30%] h-fit  border-[#D8D5D5] text-center border-[1px] rounded-2xl border-solid p-5'>
-                      <div className='text-[#3C9E00] pb-3 text-2xl font-bold border-b-2'>
-                        PKR {carData.price}
-                      </div>
-                      <div className='px-4 pt-5'>
-                        <span className='text-[#B5B5B5] underline text-lg'>
-                          Seller Information
-                        </span>
-                        <div className='flex my-6 items-start'>
-                          <div className='relative w-20 h-20'>
-                            <Image
-                              src='/images/previewMock/avatar.png'
-                              layout='fill'
-                              alt='car'
-                              objectFit='contain'
-                            />
-                          </div>
-                          <div className='text-start ml-3'>
-                            <div className='text-[#444343] font-bold'>
-                              {carData.sellerInfo.name}
-                            </div>
-                            <div className='text-[#5E5E5E] text-[12px]'>
-                              Member Since {carData.sellerInfo.joiningDate}
-                            </div>
-                            <div className='text-[#0C45B2] mt-3 font-bold cursor-pointer text-[12px]'>
-                              More Ads by {carData.sellerInfo.name}
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <button className='bg-gradient-to-r h-14 w-full text-lg rounded-lg from-[#3C9E00] mb-5 to-[#2C7400] text-white flex items-center justify-center shadow-[2px_4px_10px_0rem_rgb(0,0,0,0.25)]'>
-                            <BsFillTelephoneFill className='text-white ' />
-                            <span className='ml-3'>0300 4883238</span>
-                          </button>
-                          <button className='border-[#3C9E00] flex  mb-5 text-lg items-center justify-center border-[1px] h-14 rounded-lg w-full shadow-[2px_4px_10px_0rem_rgb(0,0,0,0.25)]'>
-                            <MdMessage className='text-[#2C7400] ' />
-                            <span className='text-[#2C7400] ml-3'>
-                              Send Message
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                    <UserProfile />
                   </div>
                   {/* Carousel Placeholder */}
 

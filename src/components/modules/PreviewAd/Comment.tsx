@@ -1,8 +1,10 @@
 import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri';
 
-const Comment = () => {
+const Comment = ({ className }: { className?: string }) => {
   return (
-    <div className='border-[#D8D5D5] border-[2px] rounded-[25px] px-10 gap-x-3 py-5'>
+    <div
+      className={`border-[#D8D5D5] border-[2px] rounded-[25px] px-10 gap-x-3 py-5 ${className}`}
+    >
       <h2 className='text-center font-bold text-lg'>COMMENTS</h2>
       <div>
         <div className='text-start'>

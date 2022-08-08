@@ -1,15 +1,30 @@
 export { default as Anchor } from './Anchor/Anchor';
+export { default as BreadCrumbs } from './BreadCrumb/BreadCrumbs';
+export { default as CarCard } from './CarCard/CarCard';
 export { default as CarModelFilter } from './CarFilters/CarModelFilter';
-export { default as CarBackground } from './CarsHomeLayout/CarBackground';
-export { default as CarCategory } from './CarsHomeLayout/CarCategories/CarCategories';
-export { default as ShopByLocation } from './CarsHomeLayout/ShopByLocation';
+export {
+  CarBackground,
+  CarCategory,
+  ShopByLocation,
+} from './CarsHomeLayout/index';
 export { default as AuthContainer } from './Container/index';
-export { default as DateInput } from './FormUtils/DateInput';
-export { default as PhoneNumberInput } from './FormUtils/PhoneNumberInput';
-export { default as Select } from './FormUtils/Select';
-export { default as TextArea } from './FormUtils/TextArea';
-export { default as TextField } from './FormUtils/TextField';
-export { default as UploadImage } from './FormUtils/UploadImage';
+export {
+  DateInput,
+  PhoneNumberInput,
+  Select,
+  TextArea,
+  TextField,
+  UploadImage,
+} from './FormUtils/index';
 export { default as Layout } from './Layout';
 export { default as Logo } from './Logo';
 export { default as ForgetPasswordModal } from './Modals/index';
+export {
+  Comment,
+  Features,
+  ImagesCarousel,
+  Specifications,
+  UserProfile,
+  VehicleInformation,
+} from './PreviewAd/index';
+export { default as Sort } from './Sort/Sort';

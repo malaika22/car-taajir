@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Features = () => {
+const Features = ({ className }: { className?: string }) => {
   const features = [
     {
       icon: '/images/previewMock/icons/features/brake-discs.png',
@@ -48,7 +48,9 @@ const Features = () => {
     },
   ];
   return (
-    <div className='border-[#D8D5D5] border-[2px] rounded-[25px] px-10 gap-x-3 py-5 '>
+    <div
+      className={`border-[#D8D5D5] border-[2px] rounded-[25px] px-10 gap-x-3 py-5 ${className}`}
+    >
       <h2 className='text-center font-bold text-lg'>CAR FEATURES</h2>
       <div className='grid grid-cols-2 mt-6 gap-y-4 gap-x-10'>
         {features.map((feature) => (

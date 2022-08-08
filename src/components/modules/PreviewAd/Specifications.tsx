@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Specifications = () => {
+const Specifications = ({ className }: { className?: string }) => {
   const specifications = [
     {
       value: '92,000km',
@@ -32,7 +32,9 @@ const Specifications = () => {
     },
   ];
   return (
-    <div className='border-[#D8D5D5] border-[2px] rounded-[25px] p-10 gap-x-3 my-10'>
+    <div
+      className={`border-[#D8D5D5] border-[2px] rounded-[25px] p-10 gap-x-3 my-10 ${className}`}
+    >
       <div className='grid grid-cols-7'>
         {specifications.map((specification) => (
           <div key={specification.value} className='text-center'>

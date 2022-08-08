@@ -10,8 +10,8 @@ const ImagesCarousel = () => {
   const nextRef = useRef(null);
 
   return (
-    <div className='w-[70%] h-[500px]  relative'>
-      <div>
+    <div className='w-full h-full  relative'>
+      <div className='h-full'>
         <Image
           src='/images/previewMock/imageOne.png'
           layout='fill'

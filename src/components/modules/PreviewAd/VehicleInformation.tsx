@@ -1,4 +1,4 @@
-const VehicleInformation = () => {
+const VehicleInformation = ({ className }: { className?: string }) => {
   const vehicaleInformation = [
     {
       key: 'Registered In',
@@ -28,7 +28,9 @@ const VehicleInformation = () => {
     },
   ];
   return (
-    <div className='border-[#D8D5D5] border-[2px] rounded-[25px] px-10 gap-x-3 py-5 my-10'>
+    <div
+      className={`border-[#D8D5D5] border-[2px] rounded-[25px] px-10 gap-x-3 py-5 my-10 ${className}`}
+    >
       <h2 className='text-center font-bold text-lg'>VEHICLE INFORMATION</h2>
       <div className='grid grid-cols-3 mt-6 gap-y-4'>
         {vehicaleInformation.map((information) => (
