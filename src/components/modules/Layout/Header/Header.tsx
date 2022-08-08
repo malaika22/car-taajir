@@ -11,7 +11,7 @@ const Header = () => {
 
   const links = [
     { title: 'Find New Cars', href: '/find-new-cars' },
-    { title: 'Find Used Cars', href: '/used-cars' },
+    { title: 'Find Used Cars', href: '/find-used-cars' },
     { title: 'Sell Your Car', href: '/sell-your-car' },
     { title: 'Blogs', href: '/blogs' },
   ];
