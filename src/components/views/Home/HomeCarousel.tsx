@@ -21,9 +21,10 @@ const HomeCarousel = () => {
     },
   };
   return (
-    <div className='h-[500px] px-32 '>
+    <div className='h-full max-w-7xl mx-auto '>
       <Swiper
-        direction='vertical'
+        breakpoints={{ 640: { direction: 'vertical' } }}
+        direction='horizontal'
         className='home-swiper'
         pagination={pagination}
         modules={[Pagination]}

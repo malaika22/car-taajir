@@ -4,8 +4,8 @@ import { Anchor } from '@/modules';
 
 const NewCarsSlide = () => {
   return (
-    <div className='w-[650px]  mx-auto'>
-      <div className='w-[300px] h-[200px] relative mx-auto mt-7'>
+    <div className='w-full  mx-auto'>
+      <div className='w-[300px] h-[250px] relative mx-auto mt-7'>
         <Image
           src='/images/landingPage/homeCarousel/newCars.png'
           layout='fill'
@@ -14,10 +14,10 @@ const NewCarsSlide = () => {
         />
       </div>
       <div className='text-white text-center'>
-        <h2 className='font-bold text-[60px] carousel-text'>
+        <h2 className='font-bold text-[50px] sm:text-[60px] carousel-text'>
           Buy Your Dream Car
         </h2>
-        <p className='text-sm my-8 mt-3'>
+        <p className='text-sm my-8 px-4 sm:px-0 mt-3 w-full sm:w-[650px] mx-auto'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu tempor
           amet tincidunt nunc quam. Quam massa consectetur enim, justo sapien.
           Lectus eu diam orci augue arcu ante in enim penatibus. Egestas egestas
