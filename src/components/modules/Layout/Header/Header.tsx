@@ -6,44 +6,41 @@ import { AiFillCaretDown } from 'react-icons/ai';
 
 import { Anchor, Logo } from '@/modules';
 
-const Header = () => {
-  const { pathname } = useRouter();
+import Snackbar from './Snackbar';
 
+const Header = () => {
   const links = [
     { title: 'Find New Cars', href: '/find-new-cars' },
     { title: 'Find Used Cars', href: '/find-used-cars' },
     { title: 'Sell Your Car', href: '/sell-your-car' },
     { title: 'Blogs', href: '/blogs' },
   ];
-  const optionalPaths = pathname === '/sell-your-car' || '/sign-up' || '/login';
 
   return (
     <nav
-      className={`flex  h-[95px]  px-24 py-6 items-center justify-between w-full z-30 ${
-        optionalPaths
-          ? 'sticky top-0 bg-[#000000]'
-          : 'fixed top-0 bg-[#0000009C]'
-      } `}
+      className='flex h-[95px]  lg:px-24 px-6 py-6 items-center justify-between w-full z-30 
+           sticky top-0 bg-[#000000]'
     >
-      <div className='flex-1 flex gap-x-8'>
+      <div className='flex-1  gap-x-8 hidden lg:flex'>
         {links.map((link, index) => (
           <NavItems href={link.href} text={link.title} key={index} />
         ))}
       </div>
-      <div className='flex-0.5'>
+      <div className='flex-0.5 z-20'>
         <Logo />
       </div>
-      <div className='text-white grow text-end flex-1'>
+      <div className='text-white grow text-end flex-1 lg:flex lg:justify-end'>
         <span className='text-[14px]'>
           <ProfileDropdown />
         </span>
         <Anchor
           href='post-ad'
-          className='bg-gradient-to-r from-[#EF6212] to-[#D14B00] ml-6 text-[14px] rounded-md px-5 py-2'
+          className='bg-gradient-to-r from-[#EF6212] to-[#D14B00] ml-6 text-[14px] rounded-md px-5 py-2 lg:block hidden'
         >
           Post an Ad
         </Anchor>
       </div>
+      <Snackbar links={links} />
     </nav>
   );
 };
