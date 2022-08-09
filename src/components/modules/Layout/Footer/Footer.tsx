@@ -73,15 +73,16 @@ const Footer = () => {
   return (
     <div className='bg-black py-7'>
       <Logo />
-      <div className='flex justify-between px-24 mt-6'>
+
+      <div className='grid grid-cols-2 sm:grid-cols-5 max-w-7xl mx-auto px-6 sm:px-0 gap-x-3 sm:gap-x-0 text-sm sm:text-lg  mt-8'>
         {footerLinks.map((footerObj: IFooter) => (
-          <div key={footerObj.category}>
+          <div key={footerObj.category} className='my-5 sm:my-0 '>
             <div className='text-white font-bold mb-4'>
               {footerObj.category}
             </div>
             {footerObj.links.map((link) => (
               <>
-                <div className='w-fit navItems'>
+                <div className='w-fit navItems '>
                   <Link href={link.link}>
                     <a
                       className='navItems text-white mb-1 text-sm font-light'
@@ -96,16 +97,16 @@ const Footer = () => {
             ))}
           </div>
         ))}
-        <div>
+        <div className='text-center col-span-2 sm:col-span-1 my-6 sm:my-0'>
           <div className='text-white font-bold mb-4'>Follow Us On</div>
           <div className='grid grid-cols-3 gap-x-3'>
-            <div className='relative w-7 h-7'>
+            <div className='relative w-7 h-7 mx-auto'>
               <Image src='/images/icons/insta.png' layout='fill' alt='Insta' />
             </div>
-            <div className='relative w-7 h-7'>
+            <div className='relative w-7 h-7 mx-auto'>
               <Image src='/images/icons/phone.png' layout='fill' alt='Phone' />
             </div>
-            <div className='relative w-7 h-7'>
+            <div className='relative w-7 h-7 mx-auto'>
               <Image src='/images/icons/fb.png' layout='fill' alt='Fb' />
             </div>
           </div>
