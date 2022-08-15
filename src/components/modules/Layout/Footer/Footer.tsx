@@ -74,7 +74,7 @@ const Footer = () => {
     <div className='bg-black py-7'>
       <Logo />
 
-      <div className='grid grid-cols-2 sm:grid-cols-5 max-w-7xl mx-auto px-6 sm:px-0 gap-x-3 sm:gap-x-0 text-sm sm:text-lg  mt-8'>
+      <div className='grid grid-cols-2 sm:grid-cols-5 max-w-7xl mx-auto px-6  gap-x-3 sm:gap-x-0 text-sm sm:text-lg  mt-8 sm:px-10'>
         {footerLinks.map((footerObj: IFooter) => (
           <div key={footerObj.category} className='my-5 sm:my-0 '>
             <div className='text-white font-bold mb-4'>
