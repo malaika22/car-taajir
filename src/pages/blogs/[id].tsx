@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 const BlogPage = () => {
   return (
-    <div className='bg-[#E5E5E5] py-16'>
-      <div className='max-w-6xl bg-white mx-auto p-12 rounded-lg ring-1 ring-offset-2 ring-slate-50'>
+    <div className='bg-[#E5E5E5] py-16 px-5 sm:px-10'>
+      <div className='max-w-6xl bg-white mx-auto p-7 sm:p-12 rounded-lg ring-1 ring-offset-2 ring-slate-50'>
         <div className='text-gray-400 text-sm'>Updated on 6/6/2022</div>
         <div className='flex items-center mt-4'>
           <div className='relative h-14 w-14 mr-5'>
@@ -20,13 +20,8 @@ const BlogPage = () => {
         <h2 className='text-2xl font-bold my-10'>
           The Future of Data Protection Management
         </h2>
-        <div className='w-full h-[500px] relative'>
-          <Image
-            src='/images/blogs/blogCover.jpg'
-            alt='Blog'
-            layout='fill'
-            objectFit='contain'
-          />
+        <div className='w-full min-h-[200px] sm:min-h-[500px] relative'>
+          <Image src='/images/blogs/blogCover.jpg' alt='Blog' layout='fill' />
         </div>
         <div className='text-[#939393] mt-14'>
           It is almost a miracle that &quot;data protection&quot; has not yet
@@ -87,7 +82,7 @@ const BlogPage = () => {
         <h2 className='text-xl  font-bold my-10 text-center'>
           Related Articles
         </h2>
-        <div className='grid grid-cols-3 gap-x-9'>
+        <div className='grid grid-cols-1 gap-y-9 sm:grid-cols-2 md:grid-cols-3 gap-x-9'>
           {blogs.slice(0, 3).map((blog, index) => (
             <BlogCard blog={blog} key={index} />
           ))}
