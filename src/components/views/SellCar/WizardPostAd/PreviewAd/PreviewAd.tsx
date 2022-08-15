@@ -136,7 +136,7 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
     <Transition appear show={true} as={Fragment}>
       <Dialog
         as='div'
-        className='relative z-10'
+        className='relative z-30'
         onClose={() => {
           console.log('close');
         }}
@@ -164,9 +164,9 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className=' w-full max-w-6xl transform overflow-hidden rounded-2xl bg-white p-10 text-left align-middle shadow-xl transition-all'>
+              <Dialog.Panel className=' w-full max-w-6xl transform overflow-hidden rounded-2xl bg-white px-5 py-10 sm:p-10 text-left align-middle shadow-xl transition-all'>
                 <div>
-                  <div className='flex items-center justify-between'>
+                  <div className='flex flex-col sm:flex-row gap-y-4 items-center justify-between'>
                     <button className='text-white rounded-lg font-bold bg-gradient-to-r h-12 w-44 from-[#2F69DA] to-[#0C45B2] shadow-[2.5px_5.06px_12.64px_0rem_rgb(0,0,0,0.25)]'>
                       Save Changes
                     </button>
@@ -185,8 +185,11 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
                     </div>
                   </div>
                   {/* Carousel Placeholder */}
-                  <div className='flex justify-between gap-x-4'>
-                    <ImagesCarousel />
+                  <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-6'>
+                    <div className='lg:col-span-2 min-h-[400px]'>
+                      <ImagesCarousel />
+                    </div>
+
                     <UserProfile />
                   </div>
                   {/* Carousel Placeholder */}
@@ -200,7 +203,7 @@ const PreviewAd = ({ previewData }: IPreviewAdInterface) => {
                   {/* INFORMATION PLACEHOLDER */}
 
                   {/* FEATURES PLACEHOLDER */}
-                  <div className='grid grid-cols-2 gap-x-5'>
+                  <div className='grid gap-y-6 grid-cols-1  md:grid-cols-2 gap-x-5'>
                     <Features />
                     <Comment />
                   </div>
