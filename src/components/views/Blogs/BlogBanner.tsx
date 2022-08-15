@@ -13,16 +13,16 @@ interface IBlogBannerProps {
 
 const BlogBanner = ({ blog }: IBlogBannerProps) => {
   return (
-    <div className='bg-white grid grid-cols-5 rounded-lg h-[300px] ring-1 ring-offset-2 ring-slate-50'>
-      <div className=' min-h-[200px] top-0 relative col-span-2 rounded-lg my-6 ml-6 '>
+    <div className='bg-white grid grid-cols-1 md:grid-cols-5 rounded-lg min-h-[300px] ring-1 ring-offset-2 ring-slate-50'>
+      <div className='min-h-[200px] top-0 relative md:col-span-2 rounded-lg my-6 mx-6 md:ml-6 '>
         <Image
           src={blog.mainImage}
           alt={blog.title}
           layout='fill'
-          className='rounded-tl-lg rounded-bl-lg'
+          className='rounded-tl-lg md:rounded-bl-lg rounded-lg'
         />
       </div>
-      <div className='col-span-3 mx-10 p-10'>
+      <div className='md:col-span-3 mx-10 py-10 px-0 md:p-10'>
         <div className='text-[#EF6212] font-bold text-sm text-end'>
           {blog.createdAt}
         </div>
