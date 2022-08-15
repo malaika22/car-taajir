@@ -17,7 +17,7 @@ const carData = {
 const UserProfile = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`w-full h-fit  border-[#D8D5D5] text-center border-[1px] rounded-2xl border-solid p-5 ${className}`}
+      className={`w-full h-fit  border-[#D8D5D5] text-center border-[1px] rounded-2xl border-solid py-5 px-2 sm:p-5 ${className}`}
     >
       <div className='text-[#3C9E00] pb-3 text-2xl font-bold border-b-2'>
         PKR {carData.price}

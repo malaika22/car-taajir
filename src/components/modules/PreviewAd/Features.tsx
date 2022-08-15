@@ -49,16 +49,21 @@ const Features = ({ className }: { className?: string }) => {
   ];
   return (
     <div
-      className={`border-[#D8D5D5] border-[2px] rounded-[25px] px-10 gap-x-3 py-5 ${className}`}
+      className={`border-[#D8D5D5] border-[2px] rounded-[25px] px-3 sm:px-10 gap-x-3 py-5 ${className}`}
     >
       <h2 className='text-center font-bold text-lg'>CAR FEATURES</h2>
-      <div className='grid grid-cols-2 mt-6 gap-y-4 gap-x-10'>
+      <div className='grid grid-cols-2 mt-6 gap-y-4 gap-x-4 sm:gap-x-10'>
         {features.map((feature) => (
-          <div key={feature.feature} className='flex items-center'>
-            <div className='relative w-6 h-6  mr-4'>
+          <div
+            key={feature.feature}
+            className='flex items-center  sm:flex-row flex-col'
+          >
+            <div className='relative w-6 h-6  sm:mr-4'>
               <Image src={feature.icon} alt={feature.feature} layout='fill' />
             </div>
-            <div className='text-[#5E5E5E] text-sm'>{feature.feature}</div>
+            <div className='text-[#5E5E5E] text-sm text-center sm:text-start '>
+              {feature.feature}
+            </div>
           </div>
         ))}
       </div>

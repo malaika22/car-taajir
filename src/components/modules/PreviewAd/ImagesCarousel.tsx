@@ -20,7 +20,7 @@ const ImagesCarousel = () => {
           className='rounded-3xl'
         />
       </div>
-      <div className='flex items-center  absolute w-[90%] m-auto bottom-[25px] h-[100px] left-0 right-0'>
+      <div className='flex items-center  absolute w-full sm:w-[90%] m-auto bottom-[25px] h-[100px] left-0 right-0'>
         <div
           className='nav-previous w-7 mr-2  relative cursor-pointer'
           ref={prevRef}
@@ -29,11 +29,12 @@ const ImagesCarousel = () => {
         </div>
         <Swiper
           spaceBetween={10}
-          slidesPerView={4}
+          slidesPerView={2}
           modules={[Navigation]}
           className='h-[100px] w-full'
           loop={true}
           lazy={true}
+          breakpoints={{ 640: { slidesPerView: 4 } }}
           onInit={(swiper) => {
             // @ts-ignore
             swiper.params.navigation.prevEl = prevRef.current;

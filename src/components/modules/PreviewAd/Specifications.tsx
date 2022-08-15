@@ -33,19 +33,20 @@ const Specifications = ({ className }: { className?: string }) => {
   ];
   return (
     <div
-      className={`border-[#D8D5D5] border-[2px] rounded-[25px] p-10 gap-x-3 my-10 ${className}`}
+      className={`border-[#D8D5D5] border-[2px] rounded-[25px] py-10 px-3 sm:p-10 gap-x-3 my-10 ${className}`}
     >
-      <div className='grid grid-cols-7'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-y-5'>
         {specifications.map((specification) => (
           <div key={specification.value} className='text-center'>
-            <div className='relative w-14 h-14 mx-auto'>
+            <div className='relative w-14 h-10 sm:h-14 mx-auto'>
               <Image
+                objectFit='contain'
                 src={specification.icon}
                 layout='fill'
                 alt={specification.value}
               />
             </div>
-            <span className='mt-2 inline-block font-bold'>
+            <span className='mt-2 inline-block font-bold  text-sm sm:text-md'>
               {specification.value}
             </span>
           </div>
