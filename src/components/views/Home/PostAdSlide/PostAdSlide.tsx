@@ -4,8 +4,8 @@ import { Anchor } from '@/modules';
 
 const PostAdSlide = () => {
   return (
-    <div className='w-full h-full mx-auto grid grid-cols-1  sm:grid-cols-3 items-center'>
-      <div className='text-white  col-span-1 order-last sm:order-1  sm:h-full'>
+    <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto sm:grid flex flex-col   sm:grid-cols-3 items-center justify-center'>
+      <div className='text-white  col-span-1 order-last sm:order-first  sm:h-auto'>
         <h2 className='font-bold leading-snug carousel-text text-[50px] sm:text-start text-center  sm:text-[60px]'>
           Want to Sell your car?
         </h2>

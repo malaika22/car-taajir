@@ -4,7 +4,7 @@ import { Anchor } from '@/modules';
 
 const UsedCarsSlide = () => {
   return (
-    <div className='w-full h-full mx-auto grid grid-cols-1 sm:grid-cols-2 items-center'>
+    <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto sm:grid  sm:grid-cols-2 items-center'>
       <div className='w-full h-[200px] sm:h-[300px] relative mx-auto '>
         <Image
           src='/images/landingPage/homeCarousel/usedCars.png'
