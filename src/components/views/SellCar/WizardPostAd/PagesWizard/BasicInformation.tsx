@@ -12,9 +12,9 @@ const BasicInformation = ({ handleNextPage }: { handleNextPage: any }) => {
 
   return (
     <div>
-      <div className='flex justify-between items-center'>
+      <div className='flex flex-col sm:flex-row justify-between items-center'>
         <h2 className='text-2xl text-[#444343] font-bold'>Basic Information</h2>
-        <p className='text-[#444343] text-sm'>
+        <p className='text-[#444343] text-sm mt-3 sm:mt-0'>
           All fields marked with <span className='text-[#F6000F]'>*</span> are
           mandatory
         </p>

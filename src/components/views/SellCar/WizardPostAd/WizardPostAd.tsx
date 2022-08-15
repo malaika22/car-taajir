@@ -1,8 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FC, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { BiCommentError } from 'react-icons/bi';
-import { FiUpload } from 'react-icons/fi';
+import { FiUpload, FiX } from 'react-icons/fi';
 import { PagesWizard, WizardSchema, wizardSchema } from 'schemas/wizard.schema';
 import { STATUS } from 'types/general.types';
 
@@ -81,7 +80,7 @@ const WizardPostAd = () => {
           data: {
             title: "We're processing your information",
             subtitle: 'Sit tight while we process your request.',
-            Icon: <FiUpload className='animate-bounce' />,
+            Icon: <FiUpload className='animate-bounce text-2xl' />,
           },
         });
         setTimeout(() => {
@@ -97,7 +96,9 @@ const WizardPostAd = () => {
           data: {
             title: 'There was an error in verifying your code',
             subtitle: 'Errorr...',
-            Icon: <BiCommentError />,
+            Icon: (
+              <FiX className=' text-5xl sm:text-7xl text-amber-900   animate-pulse ' />
+            ),
           },
         });
       }
@@ -112,13 +113,13 @@ const WizardPostAd = () => {
   };
 
   return (
-    <div className='max-w-6xl min-h-[350px] mx-auto py-10'>
+    <div className='max-w-6xl min-h-[350px] mx-auto py-10 px-5'>
       {formState.status === STATUS.preview ? (
         <PreviewAd previewData={formData} />
       ) : (
         <>
           <HeaderWizard activeIndex={activeIndex} />
-          <div className='bg-white max-w-4xl mx-auto rounded-lg shadow-[0px_4px_4px_0_rgb(0,0,0,0.25)] my-4'>
+          <div className='bg-white max-w-4xl mx-auto rounded-lg shadow-[0px_4px_4px_0_rgb(0,0,0,0.25)] my-4 '>
             {formState.status === STATUS.idle ? (
               activeIndex !== pages.length ? (
                 <FormProvider {...methods}>

@@ -11,7 +11,7 @@ const AdditionalInformation = ({ handleNextPage }: { handleNextPage: any }) => {
   } = useFormContext<WizardSchema>();
   return (
     <div>
-      <div className='flex justify-between items-center'>
+      <div className='flex flex-col sm:flex-row justify-between items-center'>
         <h2 className='text-2xl text-[#444343] font-bold'>
           Additional Information
         </h2>
@@ -20,8 +20,8 @@ const AdditionalInformation = ({ handleNextPage }: { handleNextPage: any }) => {
           mandatory
         </p>
       </div>
-      <div className='py-10 flex gap-x-10 items-start'>
-        <div className='w-[40%]'>
+      <div className='py-10 flex flex-col sm:flex-row gap-x-10 items-start'>
+        <div className='w-full sm:w-[40%]'>
           <div className='mb-3'>
             <Select
               id='additionalInformation.engineType'
@@ -77,7 +77,7 @@ const AdditionalInformation = ({ handleNextPage }: { handleNextPage: any }) => {
             />
           </div>
         </div>
-        <div className='w-[60%]'>
+        <div className='w-full sm:w-[60%]'>
           <h2 className='text-[#444343] text-xl font-bold mb-6'>Features</h2>
           <div className='grid grid-cols-2 grid-rows-12'>
             {wizardConstants.features.map((feature) => (

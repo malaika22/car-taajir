@@ -49,7 +49,7 @@ const BodyWizard = ({
       {activeIndex && activeIndex !== pages.length - 1 ? (
         <div
           onClick={() => activeIndex !== 0 && decrement()}
-          className='px-10 pt-4 flex items-center group cursor-pointer'
+          className='px-4 sm:px-10 pt-4 flex items-center group cursor-pointer'
         >
           <AiOutlineArrowLeft className='mr-2 group-hover:translate-x-[-8px] transition-all ease-in-out duration-[.15s]' />{' '}
           {pages[activeIndex - 1].label}
@@ -57,7 +57,7 @@ const BodyWizard = ({
       ) : (
         <></>
       )}
-      <div className='p-10'>
+      <div className='px-4 py-10 sm:p-10'>
         <Component handleNextPage={handleNextPage} />
       </div>
     </div>

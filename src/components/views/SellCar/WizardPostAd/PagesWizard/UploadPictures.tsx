@@ -67,7 +67,7 @@ const UploadPictures = ({ handleNextPage }: { handleNextPage: any }) => {
                     Click or Drop here
                   </button>
                   &nbsp;
-                  <div className='flex items-center gap-x-4'>
+                  <div className='flex flex-col sm:flex-row items-center gap-x-4'>
                     {fields.map((image, index) => (
                       <div key={image.id}>
                         <div className='text-end justify-end flex gap-x-2'>
