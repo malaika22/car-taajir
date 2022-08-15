@@ -69,7 +69,7 @@ const VerifyNumber = ({
   };
 
   return (
-    <div className='text-center py-8'>
+    <div className='text-center py-8 sm:px-0 px-5'>
       <h2 className='text-2xl text-[#444343] font-bold'>Verify Your Number</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mt-8'>
