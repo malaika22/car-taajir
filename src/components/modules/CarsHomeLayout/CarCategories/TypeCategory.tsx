@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import Image from 'next/image';
 import { useRef } from 'react';
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ICarCategory } from 'types/general.types';
@@ -17,24 +18,25 @@ const TypeCategory = () => {
   const nextRef = useRef(null);
 
   return (
-    <div className='mb-14'>
+    <div className='mb-14 px-5'>
       <h2 className='text-[#444343] text-lg font-bold mb-5'>Shop by Type</h2>
       <div className='flex items-center space-x-4'>
         <div
           className='nav-previous w-6 h-4 relative cursor-pointer'
           ref={prevRef}
         >
-          <Image
-            src='/images/icons/left-arrow-icon.png'
-            layout='fill'
-            alt='left arrow'
-          />
+          <AiFillCaretLeft className='text-xl' />
         </div>
         <Swiper
           spaceBetween={20}
-          slidesPerView={5}
+          slidesPerView={1}
           modules={[Navigation]}
           className='type-swiper'
+          breakpoints={{
+            425: { slidesPerView: 2 },
+            600: { slidesPerView: 4 },
+            768: { slidesPerView: 5 },
+          }}
           onInit={(swiper) => {
             // @ts-ignore
             swiper.params.navigation.prevEl = prevRef.current;
@@ -55,11 +57,7 @@ const TypeCategory = () => {
           className='nav-previous w-6 h-4 relative cursor-pointer'
           ref={nextRef}
         >
-          <Image
-            src='/images/icons/right-arrow-icon.png'
-            layout='fill'
-            alt='right-arrow'
-          />
+          <AiFillCaretRight className='text-xl' />
         </div>
         {/* </div> */}
       </div>
