@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 const FeaturedCars = () => {
   return (
-    <div className="bg-[url('/images/findCars/featured-cars/featured-background.png')] bg-cover bg-no-repeat min-h-[570px] py-20">
+    <div className="bg-[url('/images/findCars/featured-cars/featured-background.png')] bg-cover bg-no-repeat min-h-[570px] py-20 px-5">
       <h2 className='text-white text-2xl font-bold text-center mb-12'>
         Featured Used Cars For Sale
       </h2>
-      <div className='grid grid-cols-2 max-w-5xl mx-auto gap-x-5'>
+      <div className='grid gap-y-5 sm:grid-cols-2 max-w-5xl mx-auto gap-x-5'>
         <div className='grid grid-cols-2 flex-1'>
           <div className='w-full h-[150px] relative'>
             <Image
@@ -19,6 +19,7 @@ const FeaturedCars = () => {
             <Image
               src='/images/findCars/featured-cars/featured-two.png'
               layout='fill'
+              alt='feature'
             />
           </div>
           <div className='w-full h-[150px] relative'>
@@ -36,13 +37,13 @@ const FeaturedCars = () => {
             />
           </div>
         </div>
-        <div className='h-[300px] bg-black rounded-3xl px-9 py-7'>
+        <div className='min-h-[300px] bg-black rounded-3xl px-5 sm:px-9 py-7'>
           <div className='flex text-white justify-between items-start'>
-            <div className='font-bold text-lg'>
+            <div className='font-bold sm:text-lg'>
               Honda BR-V 2017
               <div className='text-sm'>Karachi</div>
             </div>
-            <div className='text-lg'>PKR 2,875,000</div>
+            <div className='text-xs sm:text-lg'>PKR 2,875,000</div>
           </div>
           <div className='grid grid-cols-4 gap-y-6 gap-x-4 text-white py-8'>
             <div className='flex flex-col justify-end text-center'>
