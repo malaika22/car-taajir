@@ -8,9 +8,9 @@ interface ICarBrand {
 
 const BrandCategory = () => {
   return (
-    <div>
+    <div className='px-5'>
       <h2 className='text-[#444343] text-lg font-bold mb-5'>Shop by Brand</h2>
-      <div className='grid grid-cols-5 gap-y-4 gap-x-6  '>
+      <div className='grid  sm:grid-cols-3 md:grid-cols-5 gap-y-4 gap-x-6  '>
         {shopByBrand.map((category) => (
           <BrandCard category={category} key={category.title} />
         ))}
@@ -23,7 +23,7 @@ export default BrandCategory;
 
 const BrandCard = ({ category }: ICarBrand) => {
   return (
-    <div className='bg-white border-2 border-[#B5B5B5] rounded-2xl py-5 flex items-center'>
+    <div className='bg-white border-2 border-[#B5B5B5] rounded-2xl py-5 flex items-center px-5'>
       <div className='w-24 h-24 relative mx-auto flex items-center'>
         {category.src ? (
           <Image
