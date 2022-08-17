@@ -9,7 +9,9 @@ interface ICarBrand {
 const BrandCategory = () => {
   return (
     <div className='px-5'>
-      <h2 className='text-[#444343] text-lg font-bold mb-5'>Shop by Brand</h2>
+      <h2 className='text-[#444343] text-lg font-bold mb-5 sm:text-start text-center'>
+        Shop by Brand
+      </h2>
       <div className='grid  sm:grid-cols-3 md:grid-cols-5 gap-y-4 gap-x-6  '>
         {shopByBrand.map((category) => (
           <BrandCard category={category} key={category.title} />
