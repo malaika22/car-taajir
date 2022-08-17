@@ -1,5 +1,5 @@
 import { Disclosure } from '@headlessui/react';
-import { MdKeyboardArrowDown, MdKeyboardArrowUp, MdSort } from 'react-icons/md';
+import { MdKeyboardArrowDown, MdSort } from 'react-icons/md';
 
 const Sort = () => {
   const sortingOptions = [
@@ -45,7 +45,7 @@ const Sort = () => {
     },
   ];
   return (
-    <div className='bg-white px-4 ring-1 ring-offset-2 ring-slate-50 rounded-lg'>
+    <div className='bg-white w-full px-4 ring-1 ring-offset-2 ring-slate-50 rounded-lg'>
       <h2 className='flex items-center py-3 text-md font-semibold text-[#5E5E5E]'>
         <MdSort className='mr-4 text-xl' />
         Sort By
