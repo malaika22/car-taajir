@@ -6,7 +6,7 @@ const ShopByStyle = () => {
       <h2 className='text-white text-2xl font-bold text-center'>
         Shop by lifestyle
       </h2>
-      <div className='grid-cols-4 grid gap-x-4 max-w-7xl mx-auto py-14'>
+      <div className='grid-cols-1 gap-y-7 sm:grid-cols-2 md:grid-cols-4 grid gap-x-4 max-w-7xl mx-auto py-14'>
         <div className='w-full h-[180px] relative flex items-center mx-auto'>
           <Image
             src='/images/findCars/newCars/commuter.png'
