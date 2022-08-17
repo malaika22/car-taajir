@@ -30,6 +30,13 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
       },
+      screens: {
+        mdLg: { raw: '(min-width: 1000px)' },
+      },
+
+      // screens: {
+      //   mdLg: '1000px',
+      // },
     },
   },
   plugins: [],
