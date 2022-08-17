@@ -3,7 +3,7 @@ import Image from 'next/image';
 const FeaturedCars = () => {
   return (
     <div className="bg-[url('/images/findCars/featured-cars/featured-background.png')] bg-cover bg-no-repeat min-h-[570px] py-20 px-5">
-      <h2 className='text-white text-2xl font-bold text-center mb-12'>
+      <h2 className='text-white text-2xl font-bold text-center mb-12 '>
         Featured Used Cars For Sale
       </h2>
       <div className='grid gap-y-5 sm:grid-cols-2 max-w-5xl mx-auto gap-x-5'>
