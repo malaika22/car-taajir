@@ -10,11 +10,15 @@ import {
 const NewCars = () => {
   return (
     <>
-      <CarBackground
-        title='Shop the nation’s largest'
-        subtitle='New car inventory'
-      />
-      <CarModelFilter />
+      <div className='relative'>
+        <CarBackground
+          title='Shop the nation’s largest'
+          subtitle='New car inventory'
+        />
+        <div className='top-[386px] absolute  right-0 left-0 max-w-7xl mx-auto px-5'>
+          <CarModelFilter />
+        </div>
+      </div>
       <CarCategory />
       <ShopByStyle />
       <ShopByLocation />
