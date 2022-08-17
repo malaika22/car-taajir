@@ -19,7 +19,9 @@ const TypeCategory = () => {
 
   return (
     <div className='mb-14 px-5'>
-      <h2 className='text-[#444343] text-lg font-bold mb-5'>Shop by Type</h2>
+      <h2 className='text-[#444343] text-lg font-bold mb-5 sm:text-start text-center'>
+        Shop by Type
+      </h2>
       <div className='flex items-center space-x-4'>
         <div
           className='nav-previous w-6 h-4 relative cursor-pointer'
