@@ -12,7 +12,7 @@ const NewCarsSearch = () => {
         <CarModelFilter />
         <div className='px-5  py-14'>
           <div className='flex justify-between mdLg:block'>
-            <h2 className='text-2xl text-black font-bold'>Find Used Cars</h2>
+            <h2 className='text-2xl text-black font-bold'>Find New Cars</h2>
             {/* RESPONSIVE SORT */}
             <div className='block mdLg:hidden'>
               <Popover className='relative'>
