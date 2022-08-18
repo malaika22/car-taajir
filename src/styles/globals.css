@@ -155,3 +155,7 @@ p.speech:after {
   border: 15px solid;
   border-color: #ef6212 transparent transparent #ef6212;
 }
+
+button {
+  outline: 0;
+}
