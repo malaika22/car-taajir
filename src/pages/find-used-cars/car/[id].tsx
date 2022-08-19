@@ -14,18 +14,18 @@ import {
 const CarPage = () => {
   return (
     <div className=' bg-[#E5E5E5] '>
-      <div className='max-w-6xl mx-auto py-10 pb-32'>
+      <div className='max-w-6xl mx-auto py-10 pb-32 px-5'>
         <h2 className='text-2xl font-bold'>2015 Toyota Corolla LE</h2>
         <div className='flex items-center text-sm mt-1 mb-6'>
           <IoLocationSharp className='text-[#5E5E5E] mr-1' />{' '}
           <span className='text-[#B5B5B5]'>Karachi, Pakistan</span>
         </div>
-        <div className='flex justify-between gap-x-4 '>
-          <div className='w-[70%] min-h-[500px]'>
+        <div className='flex md:flex-row flex-col gap-y-8 justify-between gap-x-4 '>
+          <div className='w-full md:w-[70%] h-[500px] min-h-[500px]'>
             <ImagesCarousel />
           </div>
 
-          <div className='w-[30%] space-y-4'>
+          <div className='w-full md:w-[30%] space-y-4'>
             <UserProfile className='bg-white' />
             <div className='bg-white  border-[#D8D5D5] text-center border-[1px] rounded-2xl border-solid '>
               <div className='text-[#B5B5B5] flex items-center justify-center  my-5 text-lg cursor-pointer'>
@@ -42,7 +42,7 @@ const CarPage = () => {
         <Specifications className='bg-white' />
         <VehicleInformation className='bg-white' />
 
-        <div className='grid grid-cols-2 gap-x-5'>
+        <div className='grid md:grid-cols-2 gap-y-8 gap-x-5'>
           <Features className='bg-white' />
           <div className='relative'>
             <Comment className='bg-white' />
