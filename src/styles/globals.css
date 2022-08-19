@@ -128,7 +128,7 @@ select {
 }
 
 p.bubble {
-  width: 250px;
+  /* width: 250px; */
   text-align: center;
   line-height: 1.4em;
   margin: 40px auto;
