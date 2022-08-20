@@ -19,9 +19,9 @@ const AdTabs = () => {
   }
 
   return (
-    <div className='py-10'>
+    <div className='py-10 space-y-8'>
       <Tab.Group>
-        <Tab.List className='flex space-x-3 w-[500px] mx-auto'>
+        <Tab.List className='flex sm:flex-row flex-col gap-y-3  sm:gap-x-3 w-full sm:w-[500px] mx-auto'>
           {tabs.map(({ Icon, title }, index) => (
             <Tab
               key={title}
@@ -35,8 +35,9 @@ const AdTabs = () => {
                 )
               }
             >
-              <div className='flex items-center justify-center py-2'>
-                {Icon && <Icon className={`mr-2 text-[#F37708] `} />} {title}
+              <div className='flex items-center justify-center py-2 text-sm sm:text-base'>
+                {Icon && <Icon className='mr-2 text-[#F37708] ' />}
+                {title}
               </div>
             </Tab>
           ))}
@@ -45,9 +46,9 @@ const AdTabs = () => {
           {components.map((Component, idx) => (
             <Tab.Panel
               key={idx}
-              className={classNames('rounded-xl bg-white p-3')}
+              className={classNames('rounded-xl bg-white sm:p-3')}
             >
-              <div className='bg-[#F3F3F3] p-8 rounded-xl'>
+              <div className='bg-[#F3F3F3] px-4 py-8 xs:p-8 rounded-xl'>
                 {' '}
                 <Component />
               </div>
