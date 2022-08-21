@@ -7,7 +7,8 @@ import {
 } from 'react-icons/ai';
 import { FiX } from 'react-icons/fi';
 import { IoLocationSharp } from 'react-icons/io5';
-import ReactStars from 'react-rating-stars-component';
+// eslint-disable-next-line no-var, @typescript-eslint/no-var-requires
+var Rating = require('react-rating');
 
 import { ImagesCarousel } from '@/modules';
 
@@ -244,13 +245,7 @@ const Reviews = () => {
         <h2 className='text-[#444343] font-bold text-2xl  mb-5'>Reviews</h2>
         <div className='text-[#0C45B2] font-bold '>Honda Civic Oriel</div>
         <div className='flex sm:justify-start justify-center'>
-          <ReactStars
-            count={5}
-            size={24}
-            activeColor='#ffd700'
-            edit={false}
-            value={3}
-          />
+          <Rating readonly initialRating={4} stop={5} />
         </div>
 
         <div className='flex md:space-x-10'>
