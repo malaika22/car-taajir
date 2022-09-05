@@ -1,3 +1,4 @@
+import useUser from 'hooks/useUser';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -12,6 +13,7 @@ interface ISnackbarProps {
 }
 
 const Snackbar = ({ links }: ISnackbarProps) => {
+  const { user } = useUser();
   const [open, setOpen] = useState(false);
 
   const toggleOpen = (): void => {
@@ -40,9 +42,15 @@ const Snackbar = ({ links }: ISnackbarProps) => {
             </Link>
           ))}
 
-          <Anchor href='#' className='text-[#EF6212]'>
-            Post an Ad
-          </Anchor>
+          {user.data ? (
+            <Anchor href='/sell-your-car' className='text-[#EF6212]'>
+              Post an Ad
+            </Anchor>
+          ) : (
+            <Anchor href='/login' className='text-[#EF6212]'>
+              Post an Ad
+            </Anchor>
+          )}
         </div>
       )}
     </div>

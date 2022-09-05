@@ -50,7 +50,7 @@ a {
 }
 
 .landing-page-bg {
-  background-image: url('/images/landingPage/backgroundDesign.png');
+  background-image: url('/images/landingPage/backgroundDesign.webp');
   background-repeat: no-repeat;
 }
 
@@ -59,7 +59,7 @@ a {
 }
 
 .findCars-background {
-  background: url('/images/findCars/carBackground.png');
+  background: url('/images/findCars/carBackground.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
