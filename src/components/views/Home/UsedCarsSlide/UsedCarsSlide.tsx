@@ -2,14 +2,12 @@ import Image from 'next/image';
 
 import { Anchor } from '@/modules';
 
-import CAROUSEL_HOME_USED_CARS from '../../../../../public/images/landingPage/homeCarousel/usedCars.png';
-
 const UsedCarsSlide = () => {
   return (
     <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto sm:grid  sm:grid-cols-2 items-center'>
       <div className='w-full h-[200px] sm:h-[300px] relative mx-auto '>
         <Image
-          src={CAROUSEL_HOME_USED_CARS}
+          src='/images/landingPage/homeCarousel/usedCars.png'
           priority={true}
           layout='fill'
           objectFit='contain'
