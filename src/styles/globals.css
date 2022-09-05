@@ -4,22 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: 'myFirstFont';
-  font-display: swap;
+
   src: url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-}
+  font-display: swap;
+} */
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: myFirstFont;
+  /* font-family: myFirstFont; */
 }
 
-.carousel-text {
+/* .carousel-text {
   font-family: 'Cormorant Garamond', serif;
-}
+} */
 
 .home-swiper {
   height: 100%;
