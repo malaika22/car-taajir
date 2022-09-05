@@ -48,27 +48,27 @@ export const wizardSchema = yup.object({
     exteriorColor: yup
       .string()
       .oneOf(wizardConstants.exteriorColors)
-      .required('Required!!'),
+      .required('Exterior color is required!'),
 
     milage: yup
       .number()
       .typeError('Milage should be a number')
-      .required('Required!!'),
+      .required('Milage is required!'),
     price: yup
       .number()
       .typeError('Price should be a number')
-      .required('Required!!'),
+      .required('Price is required!'),
     description: yup
       .string()
       // .min(10, 'Description is too short')
-      .required('Required!!'),
+      .required('Description!'),
   }),
   uploadPictures: yup.object({
     files: yup
       .array()
       .min(2, 'Images should be more than 2')
       .max(8, "Can't upload more than 7 images")
-      .required('Required!!')
+      .required('Images is required!')
       .test('is-correct-file', 'VALIDATION_FIELD_FILE_BIG', (values) => {
         let valid = true;
         if (values) {
@@ -86,19 +86,19 @@ export const wizardSchema = yup.object({
     engineType: yup
       .string()
       .oneOf(wizardConstants.engineType)
-      .required('Required!!'),
+      .required('Engine type is required!'),
     engineCapacity: yup
       .string()
       .min(4, 'Enter valid engine capacity')
-      .required('Required!!'),
+      .required('Engine capacity is required!'),
     transmission: yup
       .string()
       .oneOf(wizardConstants.transmission)
-      .required('Required!!'),
+      .required('Transmission is required!'),
     assembly: yup
       .string()
       .oneOf(wizardConstants.assembly)
-      .required('Required!!'),
+      .required('Assembly is required!'),
     features: yup
       .array()
       .min(1)
