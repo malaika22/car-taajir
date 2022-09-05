@@ -59,7 +59,7 @@ a {
 }
 
 .findCars-background {
-  background: url('../../public/images/findCars/carBackground.png');
+  background: url('/images/findCars/carBackground.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -95,6 +95,10 @@ a {
 
 .nav-previous.swiper-button-disabled {
   display: none;
+}
+
+.type-swiper {
+  margin: 0 10px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -158,4 +162,8 @@ p.speech:after {
 
 button {
   outline: 0;
+}
+
+svg.star-svg {
+  display: inline;
 }
