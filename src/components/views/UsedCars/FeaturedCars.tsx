@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const FeaturedCars = () => {
   return (
-    <div className="bg-[url('/images/findCars/featured-cars/featured-background.png')] bg-cover bg-no-repeat min-h-[570px] py-20 px-5">
+    <div className="bg-[url('/images/findCars/featured-cars/featured-background.webp')] bg-cover bg-no-repeat min-h-[570px] py-20 px-5">
       <h2 className='text-white text-2xl font-bold text-center mb-12 '>
         Featured Used Cars For Sale
       </h2>
@@ -10,28 +10,28 @@ const FeaturedCars = () => {
         <div className='grid grid-cols-2 flex-1'>
           <div className='w-full h-[150px] relative'>
             <Image
-              src='/images/findCars/featured-cars/featured-one.png'
+              src='/images/findCars/featured-cars/featured-one.webp'
               layout='fill'
               alt='Featured car'
             />
           </div>
           <div className='w-full h-[150px] relative'>
             <Image
-              src='/images/findCars/featured-cars/featured-two.png'
+              src='/images/findCars/featured-cars/featured-two.webp'
               layout='fill'
               alt='feature'
             />
           </div>
           <div className='w-full h-[150px] relative'>
             <Image
-              src='/images/findCars/featured-cars/featured-three.png'
+              src='/images/findCars/featured-cars/featured-three.webp'
               layout='fill'
               alt='Featured car'
             />
           </div>
           <div className='w-full h-[150px] relative'>
             <Image
-              src='/images/findCars/featured-cars/featured-four.png'
+              src='/images/findCars/featured-cars/featured-four.webp'
               layout='fill'
               alt='Featured car'
             />
@@ -49,7 +49,7 @@ const FeaturedCars = () => {
             <div className='flex flex-col justify-end text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src='/images/findCars/featured-cars/speedometer.png'
+                  src='/images/findCars/featured-cars/speedometer.webp'
                   layout='fill'
                   alt='Featured car'
                 />
@@ -59,7 +59,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src='/images/findCars/featured-cars/gas-station.png'
+                  src='/images/findCars/featured-cars/gas-station.webp'
                   layout='fill'
                   alt='Featured car'
                 />
@@ -69,7 +69,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src='/images/findCars/featured-cars/gear-box.png'
+                  src='/images/findCars/featured-cars/gear-box.webp'
                   layout='fill'
                   alt='Featured car'
                 />
@@ -79,7 +79,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src='/images/findCars/featured-cars/planner.png'
+                  src='/images/findCars/featured-cars/planner.webp'
                   layout='fill'
                   alt='Featured car'
                 />
@@ -89,7 +89,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src='/images/findCars/featured-cars/air-bag.png'
+                  src='/images/findCars/featured-cars/air-bag.webp'
                   layout='fill'
                   alt='Featured car'
                 />
@@ -99,7 +99,7 @@ const FeaturedCars = () => {
             <div className='text-center'>
               <div className='w-[35px] h-[35px] relative mx-auto mb-3'>
                 <Image
-                  src='/images/findCars/featured-cars/steerig-wheel.png'
+                  src='/images/findCars/featured-cars/steerig-wheel.webp'
                   layout='fill'
                   alt='Featured car'
                 />

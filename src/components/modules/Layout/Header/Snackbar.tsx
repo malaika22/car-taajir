@@ -48,7 +48,7 @@ const Snackbar = ({ links }: ISnackbarProps) => {
             </Anchor>
           ) : (
             <Anchor href='/login' className='text-[#EF6212]'>
-              Post an Ad
+              Login
             </Anchor>
           )}
         </div>

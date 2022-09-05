@@ -33,6 +33,7 @@ const BrandCard = ({ category }: ICarBrand) => {
             layout='fill'
             objectFit='contain'
             alt={category.title}
+            priority={true}
           />
         ) : (
           <span className='text-[#444343] font-bold text-sm cursor-pointer'>

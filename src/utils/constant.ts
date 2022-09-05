@@ -6,94 +6,94 @@ export enum ASSETS {
 export const shopByType = [
   {
     title: 'SUVs',
-    src: '/images/findCars/car-type/SUV-type.png',
+    src: '/images/findCars/car-type/SUV-type.webp',
   },
   {
     title: 'Trucks',
-    src: '/images/findCars/car-type/truck-type.png',
+    src: '/images/findCars/car-type/truck-type.webp',
   },
   {
     title: 'Crossover',
-    src: '/images/findCars/car-type/crossover-type.png',
+    src: '/images/findCars/car-type/crossover-type.webp',
   },
   {
     title: 'Sedan',
-    src: '/images/findCars/car-type/sedan-type.png',
+    src: '/images/findCars/car-type/sedan-type.webp',
   },
   {
     title: 'Convertibles',
-    src: '/images/findCars/car-type/convertibles-type.png',
+    src: '/images/findCars/car-type/convertibles-type.webp',
   },
   {
     title: 'Coupes',
-    src: '/images/findCars/car-type/coupes-type.png',
+    src: '/images/findCars/car-type/coupes-type.webp',
   },
   {
     title: 'Luxury',
-    src: '/images/findCars/car-type/luxury-type.png',
+    src: '/images/findCars/car-type/luxury-type.webp',
   },
   {
     title: 'Sports Car',
-    src: '/images/findCars/car-type/sports-car.png',
+    src: '/images/findCars/car-type/sports-car.webp',
   },
   {
     title: 'Diesel Engine',
-    src: '/images/findCars/car-type/diesel-engine.png',
+    src: '/images/findCars/car-type/diesel-engine.webp',
   },
   {
     title: 'Vans',
-    src: '/images/findCars/car-type/vans-type.png',
+    src: '/images/findCars/car-type/vans-type.webp',
   },
   {
     title: 'Hybird',
-    src: '/images/findCars/car-type/hybrid-type.png',
+    src: '/images/findCars/car-type/hybrid-type.webp',
   },
   {
     title: 'Wagons',
-    src: '/images/findCars/car-type/wagons-type.png',
+    src: '/images/findCars/car-type/wagons-type.webp',
   },
   {
     title: 'Electric Vehicles',
-    src: '/images/findCars/car-type/electric-vehicles.png',
+    src: '/images/findCars/car-type/electric-vehicles.webp',
   },
 ];
 
 export const shopByBrand = [
   {
     title: 'Toyota',
-    src: '/images/findCars/car-brand/toyota-logo.png',
+    src: '/images/findCars/car-brand/toyota-logo.webp',
   },
   {
     title: 'Ford',
-    src: '/images/findCars/car-brand/ford-logo.png',
+    src: '/images/findCars/car-brand/ford-logo.webp',
   },
   {
     title: 'Honda',
-    src: '/images/findCars/car-brand/honda-logo.png',
+    src: '/images/findCars/car-brand/honda-logo.webp',
   },
   {
     title: 'Nissan',
-    src: '/images/findCars/car-brand/nissan-logo.png',
+    src: '/images/findCars/car-brand/nissan-logo.webp',
   },
   {
     title: 'Hyundai',
-    src: '/images/findCars/car-brand/hyundai-logo.png',
+    src: '/images/findCars/car-brand/hyundai-logo.webp',
   },
   {
     title: 'Dodge',
-    src: '/images/findCars/car-brand/dodge-logo.png',
+    src: '/images/findCars/car-brand/dodge-logo.webp',
   },
   {
     title: 'Lexus',
-    src: '/images/findCars/car-brand/lexus-logo.png',
+    src: '/images/findCars/car-brand/lexus-logo.webp',
   },
   {
     title: 'Mercedes-Benz',
-    src: '/images/findCars/car-brand/mercedes-logo.png',
+    src: '/images/findCars/car-brand/mercedes-logo.webp',
   },
   {
     title: 'Mercedes-Benz',
-    src: '/images/findCars/car-brand/jeep-logo.png',
+    src: '/images/findCars/car-brand/jeep-logo.webp',
   },
   {
     title: 'See all Brands',
@@ -104,23 +104,23 @@ export const shopByBrand = [
 export const shopByLocation = [
   {
     city: 'Karachi',
-    src: '/images/findCars/shop-location/karachi.png',
+    src: '/images/findCars/shop-location/karachi.webp',
   },
   {
     city: 'Lahore',
-    src: '/images/findCars/shop-location/lahore.png',
+    src: '/images/findCars/shop-location/lahore.webp',
   },
   {
     city: 'Islamabad',
-    src: '/images/findCars/shop-location/islamabad.png',
+    src: '/images/findCars/shop-location/islamabad.webp',
   },
   {
     city: 'Peshawar',
-    src: '/images/findCars/shop-location/peshawar.png',
+    src: '/images/findCars/shop-location/peshawar.webp',
   },
   {
     city: 'Quetta',
-    src: '/images/findCars/shop-location/quetta.png',
+    src: '/images/findCars/shop-location/quetta.webp',
   },
 ];
 
