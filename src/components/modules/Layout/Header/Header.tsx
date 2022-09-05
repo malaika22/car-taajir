@@ -1,4 +1,5 @@
 import { Menu, Transition } from '@headlessui/react';
+import useUser from 'hooks/useUser';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Fragment } from 'react';
@@ -16,6 +17,8 @@ const Header = () => {
     { title: 'Blogs', href: '/blogs' },
   ];
 
+  const { user } = useUser();
+
   return (
     <nav
       className='flex h-[95px]  lg:px-24 px-6 py-6 items-center justify-between w-full z-30 
@@ -29,17 +32,29 @@ const Header = () => {
       <div className='flex-0.5 z-20'>
         <Logo />
       </div>
-      <div className='text-white grow text-end flex-1 lg:flex lg:justify-end'>
-        <span className='text-[14px]'>
-          <ProfileDropdown />
-        </span>
-        <Anchor
-          href='post-ad'
-          className='bg-gradient-to-r from-[#EF6212] to-[#D14B00] ml-6 text-[14px] rounded-md px-5 py-2 lg:block hidden'
-        >
-          Post an Ad
-        </Anchor>
-      </div>
+      {user.data ? (
+        <div className='text-white grow text-end flex-1 lg:flex lg:justify-end'>
+          <span className='text-[14px]'>
+            <ProfileDropdown />
+          </span>
+          <Anchor
+            href='/sell-your-car'
+            className=' ml-6 text-[14px] rounded-md px-5 py-2 lg:block hidden bg-[#EF6212] hover:bg-[#D14B00] transition-all duration-1000 ease-in-out'
+          >
+            Post an Ad
+          </Anchor>
+        </div>
+      ) : (
+        <div className='text-white grow text-end flex-1 lg:flex lg:justify-end'>
+          <Anchor
+            href='/login'
+            className=' ml-6 text-[14px] rounded-md px-5 py-2 lg:block hidden bg-[#EF6212] hover:bg-[#D14B00] transition-all duration-1000 ease-in-out'
+          >
+            Login
+          </Anchor>
+        </div>
+      )}
+
       <Snackbar links={links} />
     </nav>
   );
@@ -59,14 +74,21 @@ export default Header;
 
 const ProfileDropdown = () => {
   const router = useRouter();
+  const { user, logout } = useUser();
   const handleRoute = () => {
     router.push('/profile');
+  };
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
   };
   return (
     <Menu as='div' className='relative inline-block text-left'>
       <div>
         <Menu.Button className='inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'>
-          Welcome Yusra
+          <span className='xs:inline-block hidden mr-1'> Welcome</span>{' '}
+          {user.data?.fullName}
           <AiFillCaretDown
             className='ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100'
             aria-hidden='true'
@@ -95,6 +117,18 @@ const ProfileDropdown = () => {
                   </button>
                 )}
               </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? 'bg-[#EF6212] text-white' : 'text-gray-900'
+                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                )}
+              </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>
@@ -102,3 +136,5 @@ const ProfileDropdown = () => {
     </Menu>
   );
 };
+
+// bg-gradient-to-r from-[#EF6212] to-[#D14B00]
