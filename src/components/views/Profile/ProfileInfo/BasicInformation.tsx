@@ -21,13 +21,19 @@ interface IProfile {
 
 const BasicInformation = () => {
   const profileSchema = yup.object({
-    fullname: yup.string().min(5, 'Too short').required('Required!!'),
-    gender: yup.string().oneOf(gender).required('Required!!'),
-    dateOfBirth: yup.date().required('Required!!'),
-    country: yup.string().oneOf(country).required('Required!!'),
-    city: yup.string().oneOf(city).required('Required!!'),
-    username: yup.string().min(5, 'Too short').required('Required!!'),
-    email: yup.string().email('Invalid Email').required('Required!!'),
+    fullname: yup
+      .string()
+      .min(5, 'Full name is too short')
+      .required('Required!!'),
+    gender: yup.string().oneOf(gender).required('Full name is required!'),
+    dateOfBirth: yup.date().required('Date of birth is required!'),
+    country: yup.string().oneOf(country).required('Country is required!'),
+    city: yup.string().oneOf(city).required('City is required!'),
+    username: yup
+      .string()
+      .min(5, 'Username is too short')
+      .required('Username is required!'),
+    email: yup.string().email('Invalid Email').required('Email is required!'),
   });
   const {
     formState: { errors },
@@ -133,7 +139,7 @@ const BasicInformation = () => {
             </div>
             <div className='text-center'>
               <div className='text-[#8B8B8B] font-bold mb-3 '>Status</div>
-              <div className='text-[#8B8B8B] flex md:justify-start  justify-center items-start text-sm  md:text-base'>
+              <div className='text-[#8B8B8B] flex   justify-center items-start text-sm  md:text-base'>
                 Verified{' '}
                 <BsFillPatchCheckFill className='text-[#159954] mt-[4px] ml-2 text-sm  md:text-base' />
               </div>
@@ -141,52 +147,33 @@ const BasicInformation = () => {
 
             <div className='text-center'>
               <div className='text-[#8B8B8B] font-bold mb-3 '>Remove</div>
-              <div className='text-[#F6000F] font-bold cursor-pointer text-sm  md:text-base'>
-                Remove this number
+              <div className='w-fit mx-auto'>
+                <div className='text-[#F6000F] font-bold cursor-pointer text-sm  md:text-base navItems '>
+                  Remove this number
+                </div>
+                <div className='borderAnimation h-[1px] w-0 bg-[#F6000F] transition-all duration-300'></div>
               </div>
             </div>
             <div className='text-center'>
               <div className='text-[#8B8B8B] font-bold mb-3 opacity-0 hidden sm:block'>
                 ds
               </div>
-              <div className='text-[#0C45B2] font-bold cursor-pointer text-sm  md:text-base'>
-                Save as Primary
+              <div className='w-fit mx-auto'>
+                <div className='text-[#0C45B2] font-bold cursor-pointer text-sm  md:text-base navItems'>
+                  Save as Primary
+                </div>
+                <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
               </div>
             </div>
             <div className='text-center'>
-              <button className='bg-gradient-to-r from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg h-12 text-sm  px-8 sm:px-0 sm:w-full  md:text-base'>
+              <button className=' font-bold bg-[#3C9E00] hover:bg-[#2C7400]  transition-all duration-300 text-white rounded-lg h-12 text-sm  px-8 sm:px-0 sm:w-full  md:text-base'>
                 Add Numbers
               </button>
             </div>
           </div>
         </div>
-        {/* <div className='bg-[#F3F3F3] flex sm:flex-row flex-col py-5 px-5 md:px-8 pt-6 rounded-xl'>
-          <div className='grid sm:grid-cols-4 sm:grid-rows-2 grid-rows-1 grow text-center md:text-start'>
-            <div className='text-[#8B8B8B] font-bold mb-3 '>Number</div>
-            <div className='text-[#8B8B8B] font-bold mb-3 '>Status</div>
-            <div className='text-[#8B8B8B] font-bold mb-3 '>Remove</div>
-            <div></div>
-            <div className='text-[#8B8B8B] text-sm  md:text-base'>
-              +92 300 000 0000
-            </div>
-            <div className='text-[#8B8B8B] flex md:justify-start  justify-center items-start text-sm  md:text-base'>
-              Verified{' '}
-              <BsFillPatchCheckFill className='text-[#159954] mt-[4px] ml-2 text-sm  md:text-base' />
-            </div>
-            <div className='text-[#F6000F] font-bold cursor-pointer text-sm  md:text-base'>
-              Remove this number
-            </div>
-            <div className='text-[#0C45B2] font-bold cursor-pointer text-sm  md:text-base'>
-              Save as Primary
-            </div>
-            <div></div>
-          </div>
-          <button className='bg-gradient-to-r from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg h-12 md:w-52 text-sm w-36  md:text-base'>
-            Add Numbers
-          </button>
-        </div> */}
       </div>
-      <button className='bg-gradient-to-r from-[#2F69DA] to-[#0C45B2] mt-8 font-bold text-white rounded-lg h-12 w-52 '>
+      <button className=' mt-8 font-bold bg-[#2F69DA] hover:bg-[#0C45B2] transition-all duration-300  text-white rounded-lg h-12 w-52 '>
         Save Changes
       </button>
     </div>
@@ -194,3 +181,7 @@ const BasicInformation = () => {
 };
 
 export default BasicInformation;
+
+// bg-gradient-to-r from-[#3C9E00] to-[#2C7400]
+
+// bg-gradient-to-r from-[#2F69DA] to-[#0C45B2]
