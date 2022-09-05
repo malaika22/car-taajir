@@ -1,7 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import useUser from 'hooks/useUser';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FiLoader } from 'react-icons/fi';
+import { MdOutlineMailOutline } from 'react-icons/md';
 import { IPhone, ISignup } from 'types/credentials.types';
 import * as yup from 'yup';
 import 'yup-phone';
@@ -33,29 +37,49 @@ const SignUp = () => {
               alt='Google icon'
             />
           </div>
-          <div
-            className='text-[#0C45B2] text-sm'
-            onClick={() => setSignUpType('google')}
-          >
-            Sign Up with Google
+          <div>
+            <div className='text-[#0C45B2] text-sm navItems cursor-pointer'>
+              Sign Up with Google
+            </div>
+            <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
           </div>
         </div>
-        <div className='flex items-center mb-2'>
-          <div className='w-[24px] h-[24px] relative  mr-[20px]'>
-            <Image
-              src='/images/authentication/phone-icon.png'
-              layout='fill'
-              objectFit='contain'
-              alt='Phone Icon'
-            />
+        {signUpType !== 'phoneNumber' ? (
+          <div className='flex items-center mb-2'>
+            <div className='w-[24px] h-[24px] relative  mr-[20px]'>
+              <Image
+                src='/images/authentication/phone-icon.png'
+                layout='fill'
+                objectFit='contain'
+                alt='Phone Icon'
+              />
+            </div>
+            <div>
+              <div
+                className='text-[#0C45B2] text-sm navItems cursor-pointer'
+                onClick={() => setSignUpType('phoneNumber')}
+              >
+                Sign Up with Number
+              </div>
+              <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
+            </div>
           </div>
-          <div
-            className='text-[#0C45B2] text-sm'
-            onClick={() => setSignUpType('phoneNumber')}
-          >
-            Sign Up with Number
+        ) : (
+          <div className='flex items-center mb-2'>
+            <div className='w-[24px] h-[24px] relative  mr-[20px] '>
+              <MdOutlineMailOutline className='text-2xl text-green-600' />
+            </div>
+            <div>
+              <div
+                className='text-[#0C45B2] text-sm navItems cursor-pointer'
+                onClick={() => setSignUpType('default')}
+              >
+                Sign Up with email
+              </div>
+              <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );
@@ -128,18 +152,24 @@ const PhoneNumberView = () => {
               />
             </label>
 
-            <div className='text-[#444343] text-sm ml-3'>
+            <div className='text-[#444343] text-sm ml-3 flex items-center'>
               Didn’t receive your code?{' '}
-              <span className='text-[#0C45B2] font-bold'>Retry</span>
+              <div className='w-fit ml-1 cursor-pointer'>
+                <span className='text-[#0C45B2] font-bold navItems'>Retry</span>
+                <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
+              </div>
             </div>
           </div>
         </div>
       )}
       <div className='mb-10 text-sm mt-3 text-[#444343]'>
         Already a member?{' '}
-        <Anchor href='#' className='text-[#0C45B2]'>
-          Sign In
-        </Anchor>
+        <div className='w-fit inline-block ml-1'>
+          <Anchor href='/login' className='text-[#0C45B2] navItems'>
+            Sign In
+          </Anchor>
+          <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
+        </div>
       </div>
     </>
   );
@@ -150,7 +180,7 @@ const DefaultSignup = () => {
     .object({
       fullName: yup
         .string()
-        .min(5, 'Too short')
+        .min(5, 'Full name is too short')
         .required('Full name is required!'),
       email: yup.string().email('Invalid Email').required('Email is required!'),
       newPassword: yup
@@ -161,7 +191,7 @@ const DefaultSignup = () => {
         .string()
         .min(3, 'Password must be at least 8 characters')
         .oneOf([yup.ref('newPassword'), null], 'Password must match')
-        .required('Required!'),
+        .required('Confirm password is required!'),
     })
     .required();
 
@@ -173,18 +203,31 @@ const DefaultSignup = () => {
     resolver: yupResolver(schema),
   });
 
+  const router = useRouter();
+
+  const { signIn, signUp } = useUser();
   const [processing, setProcessing] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
 
   const handleSignup = (values: ISignup) => {
+    console.log('in handle signup', values);
     try {
       //call signup API
+      setProcessing(true);
+      console.log('processing');
+      setTimeout(() => {
+        signUp(values);
+        setProcessing(false);
+        router.push('/');
+      }, 3000);
     } catch (err) {
       setError('API Error');
     } finally {
-      setProcessing(false);
+      // setProcessing(false);
     }
   };
+
+  console.log('set processing', processing);
 
   return (
     <form onSubmit={handleSubmit(handleSignup)}>
@@ -226,16 +269,26 @@ const DefaultSignup = () => {
         error={errors.confirmPassword?.message}
         register={register}
       />
-      <div>Checkbox</div>
-      <button className='bg-gradient-to-r from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg h-12 w-52 '>
-        Sign up
+
+      <button className='font-bold text-white rounded-lg h-12 w-52 bg-[#3C9E00] hover:bg-[#2C7400] transition-all duration-300'>
+        {processing ? (
+          <FiLoader className='text-xl animate-spin mx-auto' />
+        ) : (
+          <span>Sign up</span>
+        )}
       </button>
-      <div className='text-sm mt-3 text-[#444343]'>
+
+      <div className='text-sm mt-3 text-[#444343] flex'>
         Already a member?{' '}
-        <Anchor href='#' className='text-[#0C45B2]'>
-          Sign In
-        </Anchor>
+        <div className='w-fit ml-1'>
+          <Anchor href='/login' className='text-[#0C45B2]  navItems'>
+            Sign In
+          </Anchor>
+          <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
+        </div>
       </div>
     </form>
   );
 };
+
+// bg-gradient-to-r from-[#3C9E00] to-[#2C7400]

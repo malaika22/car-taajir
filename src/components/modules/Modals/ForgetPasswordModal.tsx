@@ -2,6 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Dispatch, Fragment, SetStateAction, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import { STATUS } from 'types/general.types';
 import * as yup from 'yup';
@@ -75,11 +76,11 @@ const ForgetPasswordModal = ({
               >
                 <Dialog.Panel className='h-[400px] w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
                   <Dialog.Title className='text-lg font-medium leading-6 text-gray-900'>
-                    <div
-                      className='inline-block cursor-pointer'
-                      onClick={() => onClose(false)}
-                    >
-                      <IoIosArrowBack />
+                    <div className='inline-block cursor-pointer'>
+                      <IoIosArrowBack
+                        className='text-2xl'
+                        onClick={() => onClose(false)}
+                      />
                     </div>
                   </Dialog.Title>
 
@@ -95,7 +96,7 @@ const ForgetPasswordModal = ({
 
                   <div className='mt-4 text-center'>
                     <button
-                      className='bg-gradient-to-r from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg h-12 w-52 '
+                      className='bg-[#3C9E00] hover:bg-[#2C7400] transition-all duration-300  font-bold text-white rounded-lg h-12 w-52 '
                       onClick={() => onClose(false)}
                     >
                       Done
@@ -115,7 +116,7 @@ const ForgetPasswordModal = ({
           <Dialog
             as='div'
             className='relative z-10'
-            onClose={() => onClose(false)}
+            onClose={() => console.log('close')}
           >
             <Transition.Child
               as={Fragment}
@@ -141,7 +142,10 @@ const ForgetPasswordModal = ({
                   leaveTo='opacity-0 scale-95'
                 >
                   <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
-                    <div>Loading....</div>
+                    <div className='flex items-center justify-center p-[100px] flex-col'>
+                      <AiOutlineLoading3Quarters className='animate-spin text-[130px]' />
+                      <div className='mt-10 text-xl'>Loading...</div>
+                    </div>
                   </Dialog.Panel>
                 </Transition.Child>
               </div>
@@ -186,15 +190,20 @@ const ForgetPasswordModal = ({
                 <Dialog.Panel className='h-[400px] w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
                   <Dialog.Title className='text-lg font-medium leading-6 text-gray-900'>
                     <div className='inline-block cursor-pointer'>
-                      <IoIosArrowBack className='text-2xl' />
+                      <IoIosArrowBack
+                        className='text-2xl'
+                        onClick={() => onClose(false)}
+                      />
                     </div>
                   </Dialog.Title>
                   <form onSubmit={handleSubmit(handleForgetPassword)}>
                     <div className='mt-10'>
                       <h2 className='text-2xl text-[#444343] font-bold mb-3'>
-                        ERROR
+                        Forgot Password?
                       </h2>
-                      <p className='text-sm text-gray-500 mb-6'>GOT ERROR</p>
+                      <p className='text-sm text-gray-500 mb-6'>
+                        Type your email below to reset your password.
+                      </p>
                       <TextField
                         id='email'
                         placeholder='Enter email'
@@ -207,7 +216,7 @@ const ForgetPasswordModal = ({
                     </div>
 
                     <div className='mt-4'>
-                      <button className='bg-gradient-to-r from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg h-12 w-52 '>
+                      <button className='bg-[#3C9E00] hover:bg-[#2C7400] transition-all duration-300  font-bold text-white rounded-lg h-12 w-52 '>
                         Continue
                       </button>
                     </div>
@@ -223,3 +232,5 @@ const ForgetPasswordModal = ({
 };
 
 export default ForgetPasswordModal;
+
+// bg-gradient-to-r from-[#3C9E00] to-[#2C7400]
