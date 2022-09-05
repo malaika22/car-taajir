@@ -8,28 +8,28 @@ const FeaturedCars = () => {
       </h2>
       <div className='grid gap-y-5 sm:grid-cols-2 max-w-5xl mx-auto gap-x-5'>
         <div className='grid grid-cols-2 flex-1'>
-          <div className='w-full h-[150px] relative'>
+          <div className='w-full h-[150px] sm:h-auto relative'>
             <Image
               src='/images/findCars/featured-cars/featured-one.webp'
               layout='fill'
               alt='Featured car'
             />
           </div>
-          <div className='w-full h-[150px] relative'>
+          <div className='w-full h-[150px] sm:h-auto relative'>
             <Image
               src='/images/findCars/featured-cars/featured-two.webp'
               layout='fill'
               alt='feature'
             />
           </div>
-          <div className='w-full h-[150px] relative'>
+          <div className='w-full h-[150px] sm:h-auto relative'>
             <Image
               src='/images/findCars/featured-cars/featured-three.webp'
               layout='fill'
               alt='Featured car'
             />
           </div>
-          <div className='w-full h-[150px] relative'>
+          <div className='w-full h-[150px] sm:h-auto relative'>
             <Image
               src='/images/findCars/featured-cars/featured-four.webp'
               layout='fill'

@@ -1,5 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiOutlineWhatsApp,
+} from 'react-icons/ai';
 
 import Logo from '../../Logo';
 
@@ -100,15 +104,15 @@ const Footer = () => {
         <div className='text-center col-span-2 sm:col-span-1 my-6 sm:my-0'>
           <div className='text-white font-bold mb-4'>Follow Us On</div>
           <div className='grid grid-cols-3 gap-x-3'>
-            <div className='relative w-7 h-7 mx-auto'>
-              <Image src='/images/icons/insta.png' layout='fill' alt='Insta' />
-            </div>
-            <div className='relative w-7 h-7 mx-auto'>
-              <Image src='/images/icons/phone.png' layout='fill' alt='Phone' />
-            </div>
-            <div className='relative w-7 h-7 mx-auto'>
-              <Image src='/images/icons/fb.png' layout='fill' alt='Fb' />
-            </div>
+            {/* <div className='relative w-7 h-7 mx-auto'> */}
+            <AiFillInstagram className='text-white mx-auto text-3xl' />
+            {/* </div> */}
+            {/* <div className='relative w-7 h-7 mx-auto'> */}
+            <AiOutlineWhatsApp className='text-white mx-auto text-3xl' />
+            {/* </div> */}
+            {/* <div className='relative w-7 h-7 mx-auto'> */}
+            <AiFillFacebook className='text-white mx-auto text-3xl' />
+            {/* </div> */}
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ const CarCard = () => {
       <div className='grid   md:grid-cols-3'>
         <div className='w-full relative min-h-[200px] md:h-full md:col-span-1'>
           <Image
-            src='/images/carSearch/car.png'
+            src='/images/carSearch/car.webp'
             layout='fill'
             alt='car'
             className='object-fill  xs:object-contain md:object-fill rounded-[9px] xs:rounded-none md:rounded-tl-[9px] md:rounded-bl-[9px]'

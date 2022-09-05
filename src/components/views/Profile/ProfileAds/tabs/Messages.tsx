@@ -7,7 +7,7 @@ const Messages = () => {
       <div className='md:col-span-2 grid   xs:grid-cols-3 items-center'>
         <div className='col-span-1 xs:mb-0 mb-6 w-full h-28 relative mr-4'>
           <Image
-            src='/images/adMock/messageAvatar.png'
+            src='/images/adMock/messageAvatar.webp'
             layout='fill'
             alt='avatar'
             objectFit='contain'
@@ -27,7 +27,11 @@ const Messages = () => {
           <div className='border-b-[1px] border-[#D1D1D1] flex mdLg:flex-row flex-col items-center mdLg:items-start justify-between pb-4'>
             <div className='flex relative'>
               <div className='w-32 h-[112px] relative'>
-                <Image src='/images/adMock/ad.png' layout='fill' alt='Car ad' />
+                <Image
+                  src='/images/adMock/ad.webp'
+                  layout='fill'
+                  alt='Car ad'
+                />
               </div>
               <AiFillHeart className='text-red-500 absolute top-3  inline-block text-lg' />
             </div>

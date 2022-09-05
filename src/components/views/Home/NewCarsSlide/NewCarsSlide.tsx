@@ -4,7 +4,7 @@ import { Anchor } from '@/modules';
 
 const NewCarsSlide = () => {
   return (
-    <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto flex flex-col justify-center'>
+    <div className='w-full min-h-[785px] xs:min-h-[750px] sm:min-h-[600px] mx-auto xs:flex flex-col justify-center'>
       <div className='w-[300px] h-[250px] relative mx-auto mt-7'>
         <Image
           src='/images/landingPage/homeCarousel/newCars.png'

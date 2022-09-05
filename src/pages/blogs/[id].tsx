@@ -10,7 +10,7 @@ const BlogPage = () => {
         <div className='flex items-center mt-4'>
           <div className='relative h-14 w-14 mr-5'>
             <Image
-              src='/images/adMock/messageAvatar.png'
+              src='/images/adMock/messageAvatar.webp'
               alt='Blog author'
               layout='fill'
             />

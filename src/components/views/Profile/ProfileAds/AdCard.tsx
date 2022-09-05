@@ -19,7 +19,7 @@ const AdCard = ({ ad, status }: IAdCardProps) => {
       <div className='flex flex-col sm:flex-row items-center gap-x-8'>
         <div className='flex relative'>
           <div className='w-32 h-[112px] relative'>
-            <Image src='/images/adMock/ad.png' layout='fill' alt='Car ad' />
+            <Image src='/images/adMock/ad.webp' layout='fill' alt='Car ad' />
           </div>
           <AiFillHeart className='text-red-500 absolute top-3  inline-block text-lg' />
         </div>

@@ -23,6 +23,7 @@ const AuthContainer = ({ children, pageTitle }: IAuthContainer) => {
             <Image
               src='/images/authentication/authentication-banner.png'
               layout='fill'
+              priority={true}
               objectFit='contain'
               alt={pageTitle}
             />
