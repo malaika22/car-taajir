@@ -30,7 +30,7 @@ const MyAds = () => {
             <button
               key={tab}
               onClick={() => setSelectedOption(tab)}
-              className={`border-[#326bd9] border-[1px] text-sm  cursor-pointer w-full sm:w-40 h-12 rounded-lg font-bold block mb-4 ${
+              className={`border-[#326bd9] border-[1px] hover:bg-[#3C74E2] transition-all duration-300 hover:text-white text-sm  cursor-pointer w-full sm:w-40 h-12 rounded-lg font-bold block mb-4 ${
                 tab === selectedOption &&
                 'bg-gradient-to-r from-[#0C45B2] to-[#3C74E2] text-white'
               }`}

@@ -54,7 +54,7 @@ const CarCard = () => {
               <h2 className='text-[#0C45B2] text-lg sm:text-xl font-semibold'>
                 2015 Toyota Corolla LE
               </h2>
-              <button className='flex h-12 sm:h-12 rounded-lg cursor-pointer w-40 sm:w-48 text-center ring-1 ring-offset-2 ring-slate-50 justify-center items-center bg-gradient-to-r from-[#3C9E00] to-[#2C7400] text-white font-medium  text-sm sm:text-base'>
+              <button className='flex h-12 sm:h-12 rounded-lg cursor-pointer w-40 sm:w-48 text-center ring-1 ring-offset-2 ring-slate-50 justify-center items-center bg-[#3C9E00]  transition-all duration-1000 ease-in-out hover:bg-[#2C7400] text-white font-medium  text-sm sm:text-base'>
                 <BsFillTelephoneFill className='mr-4 text-sm sm:text-base' />
                 0300 4883238
               </button>
@@ -66,12 +66,15 @@ const CarCard = () => {
               <div className='text-[#0C45B2] text-xs xs:text-sm font-medium my-4'>
                 Karachi, Pakistan
               </div>
-              <button
-                onClick={() => router.push('/find-new-cars/car/1')}
-                className='text-[#0C45B2]  text-xs xs:text-sm font-medium'
-              >
-                View details
-              </button>
+              <div>
+                <button
+                  onClick={() => router.push('car/1')}
+                  className='text-[#0C45B2]  text-xs xs:text-sm font-medium navItems'
+                >
+                  View details
+                </button>
+                <div className='borderAnimation h-[1px] w-0 bg-[#0C45B2] transition-all duration-300'></div>
+              </div>
             </div>
           </div>
           <div className='grid gap-y-5 grid-cols-4 xs:grid-cols-5 md:grid-cols-7 border-t-[1px] border-[#D1D1D1] pt-4'>
@@ -97,3 +100,5 @@ const CarCard = () => {
 };
 
 export default CarCard;
+
+// from-[#3C9E00] to-[#2C7400]

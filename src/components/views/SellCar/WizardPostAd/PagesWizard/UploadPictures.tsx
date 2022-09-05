@@ -97,7 +97,7 @@ const UploadPictures = ({ handleNextPage }: { handleNextPage: any }) => {
       </div>
       <button
         onClick={handleNextPage}
-        className='bg-gradient-to-r h-12 w-44 from-[#3C9E00] to-[#2C7400] font-bold text-white rounded-lg'
+        className=' h-12 w-44  bg-[#3C9E00] hover:bg-[#2C7400] transition-all duration-300 font-bold text-white rounded-lg'
       >
         Continue
       </button>
@@ -106,3 +106,5 @@ const UploadPictures = ({ handleNextPage }: { handleNextPage: any }) => {
 };
 
 export default UploadPictures;
+
+// from-[#3C9E00] to-[#2C7400] bg-gradient-to-r

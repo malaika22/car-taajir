@@ -48,13 +48,13 @@ const UserProfile = ({ className }: { className?: string }) => {
           </div>
         </div>
         <div>
-          <button className='bg-gradient-to-r h-14 w-full text-lg rounded-lg from-[#3C9E00] mb-5 to-[#2C7400] text-white flex items-center justify-center shadow-[2px_4px_10px_0rem_rgb(0,0,0,0.25)]'>
+          <button className=' h-14 w-full text-lg rounded-lg  mb-5  bg-[#3C9E00] hover:bg-[#2C7400]  transition-all duration-300  text-white flex items-center justify-center shadow-[2px_4px_10px_0rem_rgb(0,0,0,0.25)]'>
             <BsFillTelephoneFill className='text-white ' />
             <span className='ml-3'>0300 4883238</span>
           </button>
-          <button className='border-[#3C9E00] flex mb-5  text-lg items-center justify-center border-[1px] h-14 rounded-lg w-full shadow-[2px_4px_10px_0rem_rgb(0,0,0,0.25)]'>
+          <button className='border-[#3C9E00] hover:bg-[#3C9E00]  transition-all duration-300 flex mb-5  text-lg items-center justify-center border-[1px] h-14 rounded-lg w-full shadow-[2px_4px_10px_0rem_rgb(0,0,0,0.25)]'>
             <MdMessage className='text-[#2C7400] ' />
-            <span className='text-[#2C7400] ml-3'>Send Message</span>
+            <span className='text-[#2C7400] ml-3 '>Send Message</span>
           </button>
         </div>
       </div>
@@ -63,3 +63,5 @@ const UserProfile = ({ className }: { className?: string }) => {
 };
 
 export default UserProfile;
+
+// bg-gradient-to-r from-[#3C9E00] to-[#2C7400]

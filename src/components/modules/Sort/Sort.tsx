@@ -64,7 +64,7 @@ const Sort = () => {
                 <div className='mb-4'>
                   {sort.options.map((option, index) => (
                     <Disclosure.Panel
-                      className='px-4 pt-4 pb-2 text-sm text-gray-500 '
+                      className='px-4 pt-4 pb-2 text-sm text-gray-500  cursor-pointer '
                       key={index}
                     >
                       {option}

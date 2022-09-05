@@ -2,13 +2,16 @@ import Image from 'next/image';
 
 import { Anchor } from '@/modules';
 
+import CAROUSEL_HOME_NEW_CARS from '../../../../../public/images/landingPage/homeCarousel/newCars.png';
+
 const NewCarsSlide = () => {
   return (
-    <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto'>
+    <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto flex flex-col justify-center'>
       <div className='w-[300px] h-[250px] relative mx-auto mt-7'>
         <Image
-          src='/images/landingPage/homeCarousel/newCars.png'
+          src={CAROUSEL_HOME_NEW_CARS}
           layout='fill'
+          priority={true}
           objectFit='contain'
           alt='Home carousel'
         />
@@ -25,7 +28,7 @@ const NewCarsSlide = () => {
         </p>
         <Anchor
           href='/find-new-cars'
-          className='inline-block bg-gradient-to-r from-[#F62C00] to-[#A71E00] rounded-xl px-9 py-4'
+          className='inline-block   rounded-xl px-9 py-4 hover:bg-[#A71E00] transition-all duration-1000 ease-in-out bg-[#F62C00]'
         >
           Browser New Cars
         </Anchor>
@@ -35,3 +38,5 @@ const NewCarsSlide = () => {
 };
 
 export default NewCarsSlide;
+
+// from-[#F62C00] to-[#A71E00]

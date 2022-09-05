@@ -36,17 +36,26 @@ const AdCard = ({ ad, status }: IAdCardProps) => {
               <div className='text-[#0C45B2] text-xs'>{ad.city}, Pakistan</div>
             </div>
             <div className='xs:text-end flex flex-col justify-between text-center'>
-              {status && (
+              <div className='w-fit ml-auto'>
+                {status && (
+                  <div
+                    className={`font-bold cursor-pointer text-sm navItems ${
+                      status === 'Make it Active Again'
+                        ? 'text-green-700'
+                        : status === 'Remove Ad' && 'text-[#F6000F] '
+                    }`}
+                  >
+                    {status}
+                  </div>
+                )}
                 <div
-                  className={`font-bold cursor-pointer text-sm ${
+                  className={`borderAnimation h-[1px] w-0  ${
                     status === 'Make it Active Again'
-                      ? 'text-green-700'
-                      : status === 'Remove Ad' && 'text-[#F6000F] '
-                  }`}
-                >
-                  {status}
-                </div>
-              )}
+                      ? 'bg-green-700'
+                      : status === 'Remove Ad' && 'bg-[#F6000F] '
+                  } transition-all duration-300`}
+                ></div>
+              </div>
 
               <div className='text-[#0C45B2] text-xs mt-2 xs:mt-0'>
                 Last Updated: {ad.updatedOn}

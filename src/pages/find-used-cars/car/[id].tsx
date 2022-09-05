@@ -21,7 +21,7 @@ const CarPage = () => {
           <span className='text-[#B5B5B5]'>Karachi, Pakistan</span>
         </div>
         <div className='flex md:flex-row flex-col gap-y-8 justify-between gap-x-4 '>
-          <div className='w-full md:w-[70%] h-[500px] min-h-[500px]'>
+          <div className='w-full md:w-[70%] h-[500px] md:h-auto min-h-[500px]'>
             <ImagesCarousel />
           </div>
 
@@ -30,11 +30,17 @@ const CarPage = () => {
             <div className='bg-white  border-[#D8D5D5] text-center border-[1px] rounded-2xl border-solid '>
               <div className='text-[#B5B5B5] flex items-center justify-center  my-5 text-lg cursor-pointer'>
                 <BsCheck2Circle className='text-[#8B8B8B] mr-3' />
-                Notify As Sold
+                <div>
+                  <div className='navItems'>Notify As Sold</div>
+                  <div className='borderAnimation h-[1px] w-0 bg-[#B5B5B5] transition-all duration-300'></div>
+                </div>
               </div>
               <div className='text-[#B5B5B5] flex items-center justify-center text-lg my-5 cursor-pointer'>
                 <BsFlag className='text-red-600 mr-3' />
-                Report This Ad
+                <div>
+                  <div className='navItems'>Report This Ad</div>
+                  <div className='borderAnimation h-[1px] w-0 bg-[#B5B5B5] transition-all duration-300'></div>
+                </div>
               </div>
             </div>
           </div>

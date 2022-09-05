@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import { Anchor } from '@/modules';
 
+import CAROUSEL_HOME_POST_ADS from '../../../../../public/images/landingPage/homeCarousel/postAd.png';
+
 const PostAdSlide = () => {
   return (
     <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto sm:grid flex flex-col   sm:grid-cols-3 items-center justify-center'>
@@ -18,7 +20,7 @@ const PostAdSlide = () => {
         <div className='text-center sm:text-start'>
           <Anchor
             href='/find-new-cars'
-            className='inline-block bg-gradient-to-r from-[#F62C00] to-[#A71E00] rounded-xl px-9 py-4'
+            className='inline-block hover:bg-[#A71E00] transition-all duration-1000 ease-in-out bg-[#F62C00] rounded-xl px-9 py-4'
           >
             Post an Ad
           </Anchor>
@@ -27,8 +29,9 @@ const PostAdSlide = () => {
       <div className='w-full h-[300px] sm:h-[500px] relative mx-auto col-span-1 sm:col-span-2'>
         <div className='z-[99] right-[0px] sm:right-[14px] absolute top-[105px] h-[200px] sm:h-[400px] w-[300px] sm:w-[400px]'>
           <Image
-            src='/images/landingPage/homeCarousel/postAd.png'
+            src={CAROUSEL_HOME_POST_ADS}
             layout='fill'
+            priority={true}
             objectFit='contain'
             alt='Post ad'
           />

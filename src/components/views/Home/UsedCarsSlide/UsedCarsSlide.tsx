@@ -2,12 +2,15 @@ import Image from 'next/image';
 
 import { Anchor } from '@/modules';
 
+import CAROUSEL_HOME_USED_CARS from '../../../../../public/images/landingPage/homeCarousel/usedCars.png';
+
 const UsedCarsSlide = () => {
   return (
     <div className='w-full min-h-[750px] sm:min-h-[600px] mx-auto sm:grid  sm:grid-cols-2 items-center'>
       <div className='w-full h-[200px] sm:h-[300px] relative mx-auto '>
         <Image
-          src='/images/landingPage/homeCarousel/usedCars.png'
+          src={CAROUSEL_HOME_USED_CARS}
+          priority={true}
           layout='fill'
           objectFit='contain'
           alt='Used cars'
@@ -26,7 +29,7 @@ const UsedCarsSlide = () => {
         <div className='text-center sm:text-start'>
           <Anchor
             href='/find-new-cars'
-            className='inline-block bg-gradient-to-r from-[#F62C00] to-[#A71E00] rounded-xl px-9 py-4'
+            className='inline-block hover:bg-[#A71E00] transition-all duration-1000 ease-in-out bg-[#F62C00] rounded-xl px-9 py-4'
           >
             Browse Used Cars
           </Anchor>
