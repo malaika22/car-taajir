@@ -5,9 +5,10 @@ import { FiChevronDown } from 'react-icons/fi';
 
 interface IModelFilterProps {
   className?: string;
+  route?: string;
 }
 
-const CarModelFilter = ({ className }: IModelFilterProps) => {
+const CarModelFilter = ({ className, route }: IModelFilterProps) => {
   const router = useRouter();
   const filterTabs = ['Make', 'Body Style'];
   const [selectedTab, setSelectedTab] = useState('Make');
@@ -16,7 +17,7 @@ const CarModelFilter = ({ className }: IModelFilterProps) => {
   };
 
   const handleSearch = () => {
-    router.push('/find-new-cars/abc?foo=bar');
+    router.push(`${route}/abc?foo=bar`);
   };
   return (
     <div
@@ -49,7 +50,7 @@ const CarModelFilter = ({ className }: IModelFilterProps) => {
           </div>
         </div>
         <button
-          className='bg-gradient-to-r from-[#EF6212] to-[#BD2D00] py-4 px-10 rounded-md flex items-center cursor-pointer'
+          className=' bg-[#EF6212] hover:bg-[#D14B00] transition-all duration-1000 ease-in-out py-4 px-10 rounded-md flex items-center cursor-pointer'
           onClick={handleSearch}
         >
           <AiOutlineSearch className='text-white mr-3 font-semibold text-lg' />
